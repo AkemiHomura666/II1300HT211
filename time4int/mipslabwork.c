@@ -71,13 +71,11 @@ void whataboutbuttons(void){
   int swbtns = (getbtns() >> 1);
   int sw = getsw();
     if ((getbtns() & 4) == 4){
-        changedirection(1);
+        movePaddle(0);
   }
    if ((getbtns() & 2) == 2){
-    changedirection(2);
+    movePaddle(1);
   }
-
-  //kod för att deploy poisoned apples
 
 /*     if ((getbtns() & 1) == 1){
       mytime = ((mytime & 65295) | (sw << 4));
@@ -88,20 +86,15 @@ void whataboutbuttons(void){
 int direction; //global int för direction of the snake movement
 
 
-void changedirection(int a){
+void movePaddle(int a){
   if (a == 0){
-    direction -=1; //clockwise turn
+    //code for moving paddle up
   }
-  else if (a==1){
-    direction +=1; //counterclockwise turn
-  }
+  else if (a == 1){
+    //code for moving paddle down  
+}
   else {
     return 0;
   }
-  if (direction == -2){
-    direction = 2; //turn overflow prevention
-  }
-  else if (direction == 3){
-    direction = -1; //turn overflow prevention
   }
 }
