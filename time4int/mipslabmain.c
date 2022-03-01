@@ -71,7 +71,8 @@ int main(void) {
             //updateMenu();
         } else if(mode == 1) {
             //updatePonging();
-			for (int i = 0, i<150. i++){
+			int i;
+			for (i = 0, i<150. i++){
 				dataArray[i] = 4;
 				display_update();
 			}
