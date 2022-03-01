@@ -12,6 +12,9 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int main(void) {
+	mode = 1; //skips menu
+	score = 0;
+	level = 0;
         /*
 	  This will set the peripheral bus clock to the same frequency
 	  as the sysclock. That means 80 MHz, when the microcontroller
@@ -54,20 +57,25 @@ int main(void) {
 	/* SPI2CON bit ON = 1; */
 	SPI2CONSET = 0x8000;
 	
+	
 	display_init();
-	display_string(0, "KTH/ICT lab");
-	display_string(1, "in Computer");
-	display_string(2, "Engineering");
 	display_string(3, "Welcome!");
 	display_update();
 	
-	display_image(96, icon);
-	
 	labinit(); /* Do any lab-specific initialization */
 
-	while( 1 )
-	{
-	  labwork(); /* Do lab-specific things again and again */
-	}
+	while(1) {
+    ledupdate();
+        clearPixels();
+        if(mode == 0) {
+            updateMenu();
+        } else if(mode == 1) {
+            updatePonging();
+        } else if(mode == 2) {
+            updateLose();
+        } else if(mode == 3) {
+            updateLeaderboard();
+        }
+}
 	return 0;
 }

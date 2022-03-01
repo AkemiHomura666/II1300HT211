@@ -63,36 +63,31 @@ if (counttimer == 10){
 /* This function is called repetitively from the main program */
 void labwork( void )
 {
-
-
 // print text
 //time2string( textstring, mytime );
 //display_string( 3, textstring );
 //display_update();
 //display_image(96, icon);
 
-	while(1) {
-    ledupdate();
-        clearPixels();
-        if(GAMESTATE == 1) {
-            updateMainMenu();
-        } else if(GAMESTATE == 2) {
-            updateRunning();
-        } else if(GAMESTATE == 3) {
-            updateGameOver();
-        } else if(GAMESTATE == 4) {
-            updateHighScores();
-        }
-}
-
+//checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
   int swbtns = (getbtns() >> 1);
   int sw = getsw();
     if ((getbtns() & 4) == 4){
+      if (mode == 0){
+        moveMenu(0);
+      }
+      else if (mode == 1){
         movePaddle(0);
+      }
   }
    if ((getbtns() & 2) == 2){
-    movePaddle(1);
+      if (mode == 0){
+        moveMenu(1);
+      }
+      else if (mode == 1){
+        movePaddle(1);
+      }
   }
 
 /*     if ((getbtns() & 1) == 1){
@@ -102,6 +97,7 @@ void whataboutbuttons(void){
   return 0;
 }
 
+//activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
   if (a == 0){
     //code for moving paddle up
