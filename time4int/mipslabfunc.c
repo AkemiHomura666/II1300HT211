@@ -10,6 +10,7 @@
 
 /* Declare a helper function which is local to this file */
 static void num32asc( char * s, int ); 
+uint8_t dataArray[512];
 
 #define DISPLAY_CHANGE_TO_COMMAND_MODE (PORTFCLR = 0x10)
 #define DISPLAY_CHANGE_TO_DATA_MODE (PORTFSET = 0x10)
