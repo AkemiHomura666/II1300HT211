@@ -184,7 +184,12 @@ void clearPixels(void) {
 }
 
 void display_update(void) {
-	int i, j, k;
+
+  int i;
+	for(i=0; i<512; i++) {
+		spi_send_recv(dataArray[i]);
+	}
+/* 	int i, j, k;
 	int c;
 	for(i = 0; i < 4; i++) {
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
@@ -204,7 +209,7 @@ void display_update(void) {
 			for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
 		}
-	}
+	} */
 }
 
 /* Helper function, local to this file.
