@@ -71,7 +71,12 @@ int main(void) {
         if(mode == 0) {
             updateMenu();
         } else if(mode == 1) {
-            updatePonging();
+            //updatePonging();
+			for (int i = 0, i<150. i++){
+				dataArray[i] = 4;
+				display_update();
+			}
+
         } else if(mode == 2) {
             updateLose();
         } else if(mode == 3) {
