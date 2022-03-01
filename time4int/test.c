@@ -30,7 +30,7 @@ int mytime = 0x5957;
       mytime = ((mytime & 65295) | (sw << 4));
     printf("knapp 3 är tryckt%d", mytime);
   }
-  return 0;
+  return 1;
 }
 //0011 1110 0000
 //0000 0101 1100 0000
