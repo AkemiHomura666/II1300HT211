@@ -15,7 +15,7 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int counttimer = 0;
-int mytime = 0x5957;
+int mytime = 0x0;
 
 char textstring[] = "text, more text, and even more text!";
 
@@ -49,32 +49,59 @@ void labwork( void )
   volatile int *LED = (volatile int*) 0xbf886110; 
   //delay( 1000 );
 
-  //getbtn code
-  int sw = getsw();
-
-  if ((getbtns() >> 2) & 1){
-      mytime = ((mytime & 4095) | (sw << 12));
-  }
-   if ((getbtns() & 2) == 2){
-      mytime = ((mytime & 61695) | (sw << 8));
-  }
-    if ((getbtns() & 1) == 1){
-      mytime = ((mytime & 65295) | (sw << 4));
-  }
-
 if ((IFS(0) & 0x100)){
-time2string( textstring, mytime );
-display_string( 3, textstring );
-display_update();
-display_image(96, icon);
 counttimer++;
 IFSCLR(0) = 0x100;
 }
 
-if (counttimer == 10){
+// print text
+//time2string( textstring, mytime );
+//display_string( 3, textstring );
+//display_update();
+//display_image(96, icon);
 
+if (counttimer == 10){
   tick( &mytime );
   *LED = *LED + 1;
   counttimer = 0;
 }
+}
+
+void whataboutbuttons(void){
+  int swbtns = (getbtns() >> 1);
+  int sw = getsw();
+    if ((getbtns() & 4) == 4){
+        changedirection(1);
+  }
+   if ((getbtns() & 2) == 2){
+    changedirection(2);
+  }
+
+  //kod för att deploy poisoned apples
+
+/*     if ((getbtns() & 1) == 1){
+      mytime = ((mytime & 65295) | (sw << 4));
+    printf("knapp 3 är tryckt%d", mytime);
+  } */
+  return 0;
+}
+int direction; //global int för direction of the snake movement
+
+
+void changedirection(int a){
+  if (a == 0){
+    direction -=1; //clockwise turn
+  }
+  else if (a==1){
+    direction +=1; //counterclockwise turn
+  }
+  else {
+    return 0;
+  }
+  if (direction == -2){
+    direction = 2; //turn overflow prevention
+  }
+  else if (direction == 3){
+    direction = -1; //turn overflow prevention
+  }
 }
