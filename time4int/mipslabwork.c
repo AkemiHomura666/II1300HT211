@@ -71,8 +71,7 @@ void labwork( void )
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
-  int swbtns = (getbtns() >> 1);
-  int sw = getsw();
+  level = getsw();
     if ((getbtns() & 4) == 4){
       if (mode == 0){
         moveMenu(0);
