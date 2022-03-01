@@ -96,8 +96,10 @@ uint8_t spi_send_recv(uint8_t data) {
 	return SPI2BUF;
 }
 
+
+
 void display_init(void) {
-        DISPLAY_CHANGE_TO_COMMAND_MODE;
+  DISPLAY_CHANGE_TO_COMMAND_MODE;
 	quicksleep(10);
 	DISPLAY_ACTIVATE_VDD;
 	quicksleep(1000000);
@@ -139,6 +141,22 @@ void display_string(int line, char *s) {
 			s++;
 		} else
 			textbuffer[line][i] = ' ';
+}
+
+
+ // Sends pixel coordinates to SPI buffer
+void display_pixel(int x, int y) {
+//avoidinng overflow
+	if(x<128 && y<32 && !(x < 0) && !(y < 0)) {
+		// offset on y-axis from 0 (top) to 8 (bottom)
+		int yffset = y % 8;
+		// checking section / page for desired pixel location
+		int section = y / 8;
+		// position in the data buffer array
+		int arrayposition = section*128 + x;
+		/* OR pixel with current value in the column. (1 = 1, 2 = 10, 3 = 100 ...) */
+		dataArray[arrayposition] = dataArray[arrayposition] | (0x1 << yffset);
+	}
 }
 
 void display_image(int x, const uint8_t *data) {
