@@ -68,7 +68,7 @@ int main(void) {
     ledupdate();
         clearPixels();
         if(mode == 0) {
-            updateMenu();
+            //updateMenu();
         } else if(mode == 1) {
             //updatePonging();
 			for (int i = 0, i<150. i++){
@@ -77,9 +77,9 @@ int main(void) {
 			}
 
         } else if(mode == 2) {
-            updateLose();
+            //updateLose();
         } else if(mode == 3) {
-            updateLeaderboard();
+            //updateLeaderboard();
         }
 }
 	return 0;
