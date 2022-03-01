@@ -89,6 +89,7 @@ void whataboutbuttons(void){
         movePaddle(1);
       }
   }
+  
 
 /*     if ((getbtns() & 1) == 1){
       mytime = ((mytime & 65295) | (sw << 4));
