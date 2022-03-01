@@ -57,13 +57,10 @@ int main(void) {
 	/* SPI2CON bit ON = 1; */
 	SPI2CONSET = 0x8000;
 	
-	
 	display_init();
 	display_string(3, "Welcome!");
 	display_update();
-	
 	labinit(); /* Do any lab-specific initialization */
-
 	while(1) {
     ledupdate();
         clearPixels();
@@ -72,11 +69,10 @@ int main(void) {
         } else if(mode == 1) {
             //updatePonging();
 			int i;
-			for (i = 0, i<150. i++){
+			for (i = 0; i<150; i++){
 				dataArray[i] = 4;
 				display_update();
 			}
-
         } else if(mode == 2) {
             //updateLose();
         } else if(mode == 3) {
