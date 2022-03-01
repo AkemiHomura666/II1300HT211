@@ -42,8 +42,8 @@ void labinit( void )
   return;
 }
 
-/* This function is called repetitively from the main program */
-void labwork( void )
+//delay + swag
+void ledupdate(void)
 {
   volatile int *porte = (volatile int*) 0xbf886110;
   volatile int *LED = (volatile int*) 0xbf886110; 
@@ -53,6 +53,17 @@ if ((IFS(0) & 0x100)){
 counttimer++;
 IFSCLR(0) = 0x100;
 }
+if (counttimer == 10){
+  tick( &mytime );
+  *LED = *LED + 1;
+  counttimer = 0;
+}
+}
+
+/* This function is called repetitively from the main program */
+void labwork( void )
+{
+
 
 // print text
 //time2string( textstring, mytime );
@@ -60,11 +71,18 @@ IFSCLR(0) = 0x100;
 //display_update();
 //display_image(96, icon);
 
-if (counttimer == 10){
-  tick( &mytime );
-  *LED = *LED + 1;
-  counttimer = 0;
-}
+	while(1) {
+    ledupdate();
+        clearPixels();
+        if(GAMESTATE == 1) {
+            updateMainMenu();
+        } else if(GAMESTATE == 2) {
+            updateRunning();
+        } else if(GAMESTATE == 3) {
+            updateGameOver();
+        } else if(GAMESTATE == 4) {
+            updateHighScores();
+        }
 }
 
 void whataboutbuttons(void){
@@ -83,8 +101,6 @@ void whataboutbuttons(void){
   } */
   return 0;
 }
-int direction; //global int för direction of the snake movement
-
 
 void movePaddle(int a){
   if (a == 0){

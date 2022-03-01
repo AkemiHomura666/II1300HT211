@@ -96,8 +96,6 @@ uint8_t spi_send_recv(uint8_t data) {
 	return SPI2BUF;
 }
 
-
-
 void display_init(void) {
   DISPLAY_CHANGE_TO_COMMAND_MODE;
 	quicksleep(10);
@@ -175,6 +173,13 @@ void display_image(int x, const uint8_t *data) {
 		
 		for(j = 0; j < 32; j++)
 			spi_send_recv(~data[i*32 + j]);
+	}
+}
+
+void clearPixels(void) {
+	int i;
+	for(i=0; i<512; i++) {
+		dataArray[i] = 0x0;
 	}
 }
 
