@@ -10,6 +10,7 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
+uint8_t dataArray[512];
 
 int main(void) {
 	int mode = 1; //skips menu
