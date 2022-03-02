@@ -72,12 +72,12 @@ int main(void) {
             //updatePonging();
 			int x;
 			int y;
-			for (x = 0; x<129; x++){
-				for (y = 0; y<32; y++){
+			for (x = 0; x<130; x++){
+				for (y = 0; y<30; y++){
 				display_pixel(x,y);
+				}
 				ledupdate();
 				display_update();
-				}
 			}
 			
 			

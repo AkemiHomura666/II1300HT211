@@ -43,7 +43,7 @@ void spi_send_recv(uint8_t data) {
  // Pixel coordinates to be sent to SPI buffer
 void display_pixel(int x, int y) {
 //avoiding overflow
-	if(x<129 && y<32 && !(x < 0) && !(y < 0)) {
+	if(x<130 && y<32 && !(x < 0) && !(y < 0)) {
 		// offset on y-axis from 0 (top) to 8 (bottom)
 		int cyo = y % 8;
 		// checking section / page for desired pixel location
