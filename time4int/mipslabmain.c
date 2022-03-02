@@ -72,8 +72,8 @@ int main(void) {
             //updatePonging();
 			int x;
 			int y;
-			for (x = 0; x<128; x++){
-				for (y = 0; y<32; y++){
+			for (x = 0; x<127; x++){
+				for (y = 0; y<31; y++){
 				display_pixel(x,y);
 				ledupdate();
 				display_update();
