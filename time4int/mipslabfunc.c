@@ -49,7 +49,7 @@ void display_pixel(int x, int y) {
 		// checking section / page for desired pixel location
 		int section = y / 8;
 		// position in the array
-		int posinarray = section*128+x;
+		int posinarray = (section * 128) + x;
 		//We'll do a OR with pixel w current value in the column (1 = 1, 2 = 10, 3 = 100 ...)
 		dataArray[posinarray] = dataArray[posinarray] | (0x1 << cyo);
 	}
