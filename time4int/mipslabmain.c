@@ -63,18 +63,19 @@ int main(void) {
 	labinit(); /* Do any lab-specific initialization */
 	while(mode == 1) {
     ledupdate();
-        clearPixels();
-		display_update();
+        //clearPixels();
+		//display_update();
         if(mode == 0) {
             //updateMenu();
         } 
-		else if(mode == 4) { //egentligen 1
+		else if(mode == 1) { //egentligen 1
             //updatePonging();
 			int i;
 			for (i = 0; i<20; i++){
 				display_pixel(i,i)
 				display_update();
 			}
+			
         } 
 		else if(mode == 2) {
             //updateLose();
