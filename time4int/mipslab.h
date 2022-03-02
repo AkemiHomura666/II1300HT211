@@ -53,7 +53,7 @@ void time2string( char *, int );
 int getbtns(void);
 int getsw(void);
 void enable_interrupt(void);
-uint8_t dataArray[512];
+
 
 int mode;
 int score;

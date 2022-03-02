@@ -8,8 +8,6 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
-/* Declare a helper function which is local to this file */
-static void num32asc( char * s, int ); 
 
 #define DISPLAY_CHANGE_TO_COMMAND_MODE (PORTFCLR = 0x10)
 #define DISPLAY_CHANGE_TO_DATA_MODE (PORTFSET = 0x10)
@@ -22,7 +20,7 @@ static void num32asc( char * s, int );
 
 #define DISPLAY_TURN_OFF_VDD (PORTFSET = 0x40)
 #define DISPLAY_TURN_OFF_VBAT (PORTFSET = 0x20)
-
+#define DATA_ARRAY_SIZE 512
 /* quicksleep:
    A simple function to create a small delay.
    Very inefficient use of computing resources,
@@ -33,6 +31,108 @@ void quicksleep(int cyc) {
 }
 
 uint8_t dataArray[512];
+
+// display buffer gets data here
+void spi_send_recv(uint8_t data) {
+	while(!(SPI2STAT & 0x08));
+	SPI2BUF = data;
+	while(!(SPI2STAT & 1));
+	//return SPI2BUF;
+}
+
+ // Pixel coordinates to be sent to SPI buffer
+void display_pixel(int x, int y) {
+//avoiding overflow
+	if(x<128 && y<32 && !(x < 0) && !(y < 0)) {
+		// offset on y-axis from 0 (top) to 8 (bottom)
+		int cyo = y % 8;
+		// checking section / page for desired pixel location
+		int section = y / 8;
+		// position in the array
+		int posinarray = section*128+x;
+		//We'll do a OR with pixel w current value in the column (1 = 1, 2 = 10, 3 = 100 ...)
+		dataArray[posinarray] = dataArray[posinarray] | (0x1 << cyo);
+	}
+}
+
+// Hex coordinates to be sent to SPI buffer at specified location.
+void display_hex(int x, int linje, int invalue) {
+//avoiding overflow
+ 	if(x<128 && x>=0 && linje >= 0 && linje < 4) {
+    // position in the array
+		int posinarray = 128 * linje + x;
+		//We'll again do a OR with pixel w current value in the array
+		dataArray[posinarray] = dataArray[posinarray] | invalue;
+	}
+}
+
+void display_string(int line, char *s) {
+	int i;
+	if(line < 0 || line >= 4)
+		return;
+	if(!s)
+		return;
+	
+	for(i = 0; i < 16; i++)
+		if(*s) {
+			textbuffer[line][i] = *s;
+			s++;
+		} else
+			textbuffer[line][i] = ' ';
+}
+
+void display_update(void) {
+	// sends buffer data to the oled
+	int d;
+	for(d=0; d<DATA_ARRAY_SIZE; d++) {
+		spi_send_recv(dataArray[d]);
+	}
+}
+//clears buffer data
+void clearPixels(void) {
+	int i;
+	for(i=0; i<512; i++) {
+		dataArray[i] = 0x0;
+	}
+  display_update();
+}
+
+//getting display up and running
+void display_init(void) {
+  DISPLAY_CHANGE_TO_COMMAND_MODE;
+	quicksleep(10);
+	DISPLAY_ACTIVATE_VDD;
+	quicksleep(1000000);
+	
+	spi_send_recv(0xAE);
+	DISPLAY_ACTIVATE_RESET;
+	quicksleep(10);
+	DISPLAY_DO_NOT_RESET;
+	quicksleep(10);
+	
+	spi_send_recv(0x8D);
+	spi_send_recv(0x14);
+	
+	spi_send_recv(0xD9);
+	spi_send_recv(0xF1);
+	
+	DISPLAY_ACTIVATE_VBAT;
+	quicksleep(10000000);
+	
+	spi_send_recv(0xA1);
+	spi_send_recv(0xC8);
+	
+	spi_send_recv(0xDA);
+	spi_send_recv(0x20);
+  spi_send_recv(0x0);
+	
+	spi_send_recv(0xAF);
+  quicksleep(10000000);
+  DISPLAY_CHANGE_TO_DATA_MODE;
+}
+
+
+
 
 /* tick:
    Add 1 to time in memory, at location pointed to by parameter.
@@ -82,75 +182,15 @@ void tick( unsigned int * timep )
    repeated calls to display_image; display_image overwrites
    about half of the digits shown by display_debug.
 */   
-void display_debug( volatile int * const addr )
+/* void display_debug( volatile int * const addr )
 {
   display_string( 1, "Addr" );
   display_string( 2, "Data" );
   num32asc( &textbuffer[1][6], (int) addr );
   num32asc( &textbuffer[2][6], *addr );
   display_update();
-}
+} */
 
-void display_init(void) {
-  DISPLAY_CHANGE_TO_COMMAND_MODE;
-	quicksleep(10);
-	DISPLAY_ACTIVATE_VDD;
-	quicksleep(1000000);
-	
-	spi_send_recv(0xAE);
-	DISPLAY_ACTIVATE_RESET;
-	quicksleep(10);
-	DISPLAY_DO_NOT_RESET;
-	quicksleep(10);
-	
-	spi_send_recv(0x8D);
-	spi_send_recv(0x14);
-	
-	spi_send_recv(0xD9);
-	spi_send_recv(0xF1);
-	
-	DISPLAY_ACTIVATE_VBAT;
-	quicksleep(10000000);
-	
-	spi_send_recv(0xA1);
-	spi_send_recv(0xC8);
-	
-	spi_send_recv(0xDA);
-	spi_send_recv(0x20);
-	
-	spi_send_recv(0xAF);
-}
-
-void display_string(int line, char *s) {
-	int i;
-	if(line < 0 || line >= 4)
-		return;
-	if(!s)
-		return;
-	
-	for(i = 0; i < 16; i++)
-		if(*s) {
-			textbuffer[line][i] = *s;
-			s++;
-		} else
-			textbuffer[line][i] = ' ';
-}
-
-
- // Sends pixel coordinates to SPI buffer
-void display_pixel(int x, int y) {
-//avoidinng overflow
-	if(x<128 && y<32 && !(x < 0) && !(y < 0)) {
-		// offset on y-axis from 0 (top) to 8 (bottom)
-		int yffset = y % 8;
-		// checking section / page for desired pixel location
-		int section = y / 8;
-		// position in the data buffer array
-		int arrayposition = section*128 + x;
-		/* OR pixel with current value in the column. (1 = 1, 2 = 10, 3 = 100 ...) */
-		dataArray[arrayposition] = dataArray[arrayposition] | (0x1 << yffset);
-	}
-}
 
 void display_image(int x, const uint8_t *data) {
 	int i, j;
@@ -171,34 +211,28 @@ void display_image(int x, const uint8_t *data) {
 	}
 }
 
-void clearPixels(void) {
-	int i;
-	for(i=0; i<512; i++) {
-		dataArray[i] = 0x0;
-	}
-  display_update();
 
-}
 
-void OledPutBuffer(int cb, uint8_t * rgbTx)
+/*
+ void OledPutBuffer(int cb, uint8_t * rgbTx)
 {
   int ib; 
   uint8_t bTmp;
-     /* Write/Read the data
-     */
+     // Write/Read the data
      for (ib = 0; ib < cb; ib++) {
-          /* Wait for transmitter to be ready
-          */
+          //Wait for transmitter to be ready
+           
           while(!(SPI2STAT & 0x08));
-          /* Write the next transmit byte.
-          */
+          // Write the next transmit byte.
+           
           SPI2BUF = *rgbTx++;
-          /* Wait for receive byte.
-          */
+          // Wait for receive byte.
+          
           while(!(SPI2STAT & 1));
           bTmp = SPI2BUF;
           } 
 }
+*/
 
 /* Symbols describing the geometry of the display.
 #define   cbOledDispMax  512       //max number of bytes in display buffer
@@ -207,7 +241,7 @@ void OledPutBuffer(int cb, uint8_t * rgbTx)
 #define   cpagOledMax         4    //number of display memory pages
 /* ------------------------------------------------------------ */
 
-void display_update(void) {
+/* void display_update(void) {
 
   int ipag;
   int icol;
@@ -224,7 +258,10 @@ void display_update(void) {
       DISPLAY_CHANGE_TO_DATA_MODE;
 
       OledPutBuffer(128, pb);
-      pb+= 128;
+      pb+= 128; */
+
+
+
  	/* int i, j, k;
 	int c;
 	for(i = 0; i < 4; i++) {
@@ -245,15 +282,8 @@ void display_update(void) {
 			for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
 		} */
-	} 
-}
-
-uint8_t spi_send_recv(uint8_t data) {
-	while(!(SPI2STAT & 0x08));
-	SPI2BUF = data;
-	while(!(SPI2STAT & 1));
-	return SPI2BUF;
-}
+	//} 
+//}
 
 
 /* Helper function, local to this file.
