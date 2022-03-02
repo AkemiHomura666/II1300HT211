@@ -71,8 +71,8 @@ int main(void) {
 		else if(mode == 4) { //egentligen 1
             //updatePonging();
 			int i;
-			for (i = 0; i<250; i++){
-				dataArray[i] = 8;
+			for (i = 0; i<20; i++){
+				display_pixel(i,i)
 				display_update();
 			}
         } 
