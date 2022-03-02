@@ -43,13 +43,13 @@ void spi_send_recv(uint8_t data) {
  // Pixel coordinates to be sent to SPI buffer
 void display_pixel(int x, int y) {
 //avoiding overflow
-	if(x<128 && y<32 && !(x < 0) && !(y < 0)) {
+	if(x<129 && y<32 && !(x < 0) && !(y < 0)) {
 		// offset on y-axis from 0 (top) to 8 (bottom)
 		int cyo = y % 8;
 		// checking section / page for desired pixel location
 		int section = y / 8;
 		// position in the array
-		int posinarray = (section * 128) + x;
+		int posinarray = section*128 + x;
 		//We'll do a OR with pixel w current value in the column (1 = 1, 2 = 10, 3 = 100 ...)
 		dataArray[posinarray] = dataArray[posinarray] | (0x1 << cyo);
 	}
@@ -88,6 +88,7 @@ void display_update(void) {
 		spi_send_recv(dataArray[d]);
 	}
 }
+
 //clears buffer data
 void clearPixels(void) {
 	int i;
