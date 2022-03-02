@@ -74,7 +74,7 @@ int main(void) {
 			int y;
 			for (x = 0; x<30; x++){
 				for (y = 0; y<120; y++){
-				display_pixel(i,i);
+				display_pixel(x,y);
 				}
 			}
 			display_update();
