@@ -66,16 +66,19 @@ int main(void) {
         clearPixels();
         if(mode == 0) {
             //updateMenu();
-        } else if(mode == 1) {
+        } 
+		else if(mode == 1) {
             //updatePonging();
 			int i;
 			for (i = 0; i<150; i++){
 				dataArray[i] = 4;
 				display_update();
 			}
-        } else if(mode == 2) {
+        } 
+		else if(mode == 2) {
             //updateLose();
-        } else if(mode == 3) {
+        } 
+		else if(mode == 3) {
             //updateLeaderboard();
         }
 }
