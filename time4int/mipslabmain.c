@@ -72,7 +72,7 @@ int main(void) {
             //updatePonging();
 			int x;
 			int y;
-			for (x = 0; x<30; x++){
+			for (x = 0; x<60; x++){
 				for (y = 0; y<120; y++){
 				display_pixel(x,y);
 				}
