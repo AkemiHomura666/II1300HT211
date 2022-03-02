@@ -70,11 +70,14 @@ int main(void) {
         } 
 		else if(mode == 1) { //egentligen 1
             //updatePonging();
-			int i;
-			for (i = 0; i<20; i++){
+			int x;
+			int y;
+			for (x = 0; x<30; x++){
+				for (y = 0; y<120; y++){
 				display_pixel(i,i);
-				display_update();
+				}
 			}
+			display_update();
 			
         } 
 		else if(mode == 2) {
