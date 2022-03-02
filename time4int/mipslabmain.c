@@ -58,20 +58,20 @@ int main(void) {
 	SPI2CONSET = 0x8000;
 	
 	display_init();
-	display_string(3, "Welcome!");
+	display_string(3, "Welcom!");
 	display_update();
 	labinit(); /* Do any lab-specific initialization */
-	while(1) {
+	while(mode == 1) {
     ledupdate();
         clearPixels();
         if(mode == 0) {
             //updateMenu();
         } 
-		else if(mode == 1) {
+		else if(mode == 4) { //egentligen 1
             //updatePonging();
 			int i;
-			for (i = 0; i<150; i++){
-				dataArray[i] = 4;
+			for (i = 0; i<250; i++){
+				dataArray[i] = 8;
 				display_update();
 			}
         } 

@@ -94,7 +94,6 @@ void whataboutbuttons(void){
       mytime = ((mytime & 65295) | (sw << 4));
     printf("knapp 3 är tryckt%d", mytime);
   } */
-  return 0;
 }
 
 //activated  by whataboutbuttons to move paddle up or down
@@ -106,7 +105,7 @@ void movePaddle(int a){
     //code for moving paddle down  
 }
   else {
-    return 0;
+    //
   }
   }
 }
