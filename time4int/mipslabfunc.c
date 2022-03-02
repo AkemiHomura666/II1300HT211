@@ -193,7 +193,7 @@ void display_update(void) {
   int ipag;
   int icol;
   uint8_t * pb;
-  bp = dataArray;
+  pb = dataArray;
     for (ipag = 0; ipag < 128; ipag++) {
       DISPLAY_CHANGE_TO_COMMAND_MODE;
       spi_send_recv(0x22);
