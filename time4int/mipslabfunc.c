@@ -32,6 +32,8 @@ void quicksleep(int cyc) {
 	for(i = cyc; i > 0; i--);
 }
 
+uint8_t dataArray[512];
+
 /* tick:
    Add 1 to time in memory, at location pointed to by parameter.
    Time is stored as 4 pairs of 2 NBCD-digits.
@@ -89,13 +91,6 @@ void display_debug( volatile int * const addr )
   display_update();
 }
 
-uint8_t spi_send_recv(uint8_t data) {
-	while(!(SPI2STAT & 0x08));
-	SPI2BUF = data;
-	while(!(SPI2STAT & 1));
-	return SPI2BUF;
-}
-
 void display_init(void) {
   DISPLAY_CHANGE_TO_COMMAND_MODE;
 	quicksleep(10);
@@ -124,7 +119,6 @@ void display_init(void) {
 	spi_send_recv(0x20);
 	
 	spi_send_recv(0xAF);
-  clearPixels();
 }
 
 void display_string(int line, char *s) {
@@ -182,15 +176,37 @@ void clearPixels(void) {
 	for(i=0; i<512; i++) {
 		dataArray[i] = 0x0;
 	}
+  display_update();
+
 }
+
+
+/* Symbols describing the geometry of the display.
+#define   cbOledDispMax  512       //max number of bytes in display buffer
+#define   ccolOledMax         128  //number of display columns
+#define   crowOledMax         32   //number of display rows
+#define   cpagOledMax         4    //number of display memory pages
+/* ------------------------------------------------------------ */
 
 void display_update(void) {
 
-  int i;
-	for(i=0; i<512; i++) {
-		spi_send_recv(dataArray[i]);
-	}
-/* 	int i, j, k;
+  int ipag;
+  int icol;
+  uint8_t * pb;
+  bp = dataArray;
+    for (ipag = 0; ipag < 128; ipag++) {
+      DISPLAY_CHANGE_TO_COMMAND_MODE;
+      spi_send_recv(0x22);
+		  spi_send_recv(ipag);
+
+      	
+      spi_send_recv(0x0);
+		  spi_send_recv(0x10);
+      DISPLAY_CHANGE_TO_DATA_MODE;
+
+      OledPutBuffer(128, pb);
+      pb+= 128;
+ 	/* int i, j, k;
 	int c;
 	for(i = 0; i < 4; i++) {
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
@@ -209,9 +225,37 @@ void display_update(void) {
 			
 			for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
-		}
-	} */
+		} */
+	} 
 }
+
+void OledPutBuffer(int cb, BYTE * rgbTx)
+{
+  int ib; 
+  uint8_t bTmp;
+     /* Write/Read the data
+     */
+     for (ib = 0; ib < cb; ib++) {
+          /* Wait for transmitter to be ready
+          */
+          while (SPI2STATbits.SPITBE == 0);
+          /* Write the next transmit byte.
+          */
+          SPI2BUF = *rgbTx++;
+          /* Wait for receive byte.
+          */
+          while (SPI2STATbits.SPIRBF == 0);
+          bTmp = SPI2BUF;
+} 
+}
+
+uint8_t spi_send_recv(uint8_t data) {
+	while(!(SPI2STAT & 0x08));
+	SPI2BUF = data;
+	while(!(SPI2STAT & 1));
+	return SPI2BUF;
+}
+
 
 /* Helper function, local to this file.
    Converts a number to hexadecimal ASCII digits. */
