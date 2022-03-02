@@ -238,13 +238,13 @@ void OledPutBuffer(int cb, uint8_t * rgbTx)
      for (ib = 0; ib < cb; ib++) {
           /* Wait for transmitter to be ready
           */
-          while (SPI2STATbits.SPITBE == 0);
+          while(!(SPI2STAT & 0x08));
           /* Write the next transmit byte.
           */
           SPI2BUF = *rgbTx++;
           /* Wait for receive byte.
           */
-          while (SPI2STATbits.SPIRBF == 0);
+          while(!(SPI2STAT & 1));
           bTmp = SPI2BUF;
 } 
 }
