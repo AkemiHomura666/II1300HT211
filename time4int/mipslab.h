@@ -55,6 +55,6 @@ int getsw(void);
 void enable_interrupt(void);
 uint8_t dataArray[512];
 
-   int mode;
-	int score;
-	int level;
+int mode;
+int score;
+int level;
