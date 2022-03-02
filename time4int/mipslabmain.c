@@ -64,6 +64,7 @@ int main(void) {
 	while(mode == 1) {
     ledupdate();
         clearPixels();
+		display_update();
         if(mode == 0) {
             //updateMenu();
         } 
