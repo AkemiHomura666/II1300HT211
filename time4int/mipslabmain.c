@@ -12,9 +12,9 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int main(void) {
-	int mode = 1; //skips menu
-	int score = 0;
-	int level = 0;
+	mode = 1; //skips menu
+	score = 0;
+	level = 0;
         /*
 	  This will set the peripheral bus clock to the same frequency
 	  as the sysclock. That means 80 MHz, when the microcontroller
