@@ -229,7 +229,7 @@ void display_update(void) {
 	} 
 }
 
-void OledPutBuffer(int cb, BYTE * rgbTx)
+void OledPutBuffer(int cb, uint8_t * rgbTx)
 {
   int ib; 
   uint8_t bTmp;
