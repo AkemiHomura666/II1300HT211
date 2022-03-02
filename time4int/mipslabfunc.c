@@ -180,6 +180,25 @@ void clearPixels(void) {
 
 }
 
+void OledPutBuffer(int cb, uint8_t * rgbTx)
+{
+  int ib; 
+  uint8_t bTmp;
+     /* Write/Read the data
+     */
+     for (ib = 0; ib < cb; ib++) {
+          /* Wait for transmitter to be ready
+          */
+          while(!(SPI2STAT & 0x08));
+          /* Write the next transmit byte.
+          */
+          SPI2BUF = *rgbTx++;
+          /* Wait for receive byte.
+          */
+          while(!(SPI2STAT & 1));
+          bTmp = SPI2BUF;
+          } 
+}
 
 /* Symbols describing the geometry of the display.
 #define   cbOledDispMax  512       //max number of bytes in display buffer
@@ -227,26 +246,6 @@ void display_update(void) {
 				spi_send_recv(font[c*8 + k]);
 		} */
 	} 
-}
-
-void OledPutBuffer(int cb, uint8_t * rgbTx)
-{
-  int ib; 
-  uint8_t bTmp;
-     /* Write/Read the data
-     */
-     for (ib = 0; ib < cb; ib++) {
-          /* Wait for transmitter to be ready
-          */
-          while(!(SPI2STAT & 0x08));
-          /* Write the next transmit byte.
-          */
-          SPI2BUF = *rgbTx++;
-          /* Wait for receive byte.
-          */
-          while(!(SPI2STAT & 1));
-          bTmp = SPI2BUF;
-} 
 }
 
 uint8_t spi_send_recv(uint8_t data) {
