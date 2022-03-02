@@ -124,7 +124,7 @@ void display_init(void) {
 	spi_send_recv(0x20);
 	
 	spi_send_recv(0xAF);
-  clearPixels;
+  clearPixels();
 }
 
 void display_string(int line, char *s) {
