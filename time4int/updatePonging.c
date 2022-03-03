@@ -22,6 +22,7 @@ void movePaddle(int a){
         p2 = p2+1;
         printpaddle(p2,2);
   }
+}
 
 void updatePonging(void){
 			whataboutbuttons();
