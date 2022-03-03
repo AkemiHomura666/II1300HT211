@@ -78,7 +78,7 @@ void whataboutbuttons(void){
   //check button 4
     if ((getbtns() & 4) == 4){
       if (mode == 0){
-        moveLetter(0);
+       // moveLetter(0);
       }
       else if (mode == 1){
         movePaddle(0);
@@ -87,7 +87,7 @@ void whataboutbuttons(void){
   //check button 3
    if ((getbtns() & 2) == 2){
       if (mode == 0){
-        moveLetter(1);
+       // moveLetter(1);
       }
       else if (mode == 1){
         movePaddle(1);

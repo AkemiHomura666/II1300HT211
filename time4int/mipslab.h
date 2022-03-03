@@ -59,4 +59,4 @@ int mode;
 int score;
 int level;
 int menuselection;
-char[3] highscorename;
+char highscorename[3];
