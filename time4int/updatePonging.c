@@ -31,21 +31,21 @@ void printpaddle(int y, int p){
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
     
-    if (a == 0 && p1<24 && p1>-1){
+    if (a == 0 && p1<24 && (p1 >= 1) ){
     //code for moving paddle up
     p1 = p1-1;
     printpaddle(p1,1);
    }
-    else if (a == 1 && p1<24 && p1>-1){
+    else if (a == 1 && p1<24 && (p1 >= 1) ){
         //code for moving paddle down  
         p1 = p1+1;
         printpaddle(p1,1);
     }
-    else if (a == 2 && p2<24 && p2>-1){
+    else if (a == 2 && p2<24 && (p2 >= 1) ){
         p2 = p2-1;
         printpaddle(p2,2);
         }
-    else if (a == 3 && p2<24 && p2>-1){
+    else if (a == 3 && p2<24 && (p2 >= 1) ){
         p2 = p2+1;
         printpaddle(p2,2);
   }
