@@ -26,8 +26,8 @@ void printpaddle(int y, int p){
             delete_pixel(126,y+9);
             delete_pixel(127,y+9);
             }
+        display_update();
     quicksleep(1000000);
-    display_update();
     return;
     }
     
