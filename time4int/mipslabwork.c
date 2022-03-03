@@ -69,6 +69,7 @@ void labwork( void )
 //display_string( 3, textstring );
 //display_update();
 //display_image(96, icon);
+}
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
@@ -129,7 +130,7 @@ void movePaddle(int a){
     //
   }
   }
-}
+
 
 void moveLetter(int input){
   
