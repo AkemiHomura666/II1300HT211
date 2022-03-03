@@ -8,5 +8,6 @@ int getsw( void ){
 
 int getbtns(void){
     int btns = (((PORTD >> 5) & 0x7)<< 1)|(PORTF  & 0x1);
+    //int btns = (((PORTD >> 5) & 0x7)<< 1)|(PORTF  & 0x1);
     return btns;
 }
