@@ -25,8 +25,8 @@ void movePaddle(int a){
 
 void updatePonging(void){
 			whataboutbuttons();
-			whataboutintersect();
-            whataboutball();
+			//whataboutintersect();
+            //whataboutball();
 
 
 
@@ -53,4 +53,5 @@ void printpaddle(int y, int p){
             display_pixel(127,y+i);
         }
                
+    }
     }
