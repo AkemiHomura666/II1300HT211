@@ -89,7 +89,7 @@ void display_hs(uint8_t tablearray[][])
   int i,j;
   for(i = 0; i < 5; i++){
     for(j = 0; j < 5; j++){
-      display_hex(50,i,highscorename[i][j])
+      display_hex(50,i,highscorename[i][j]);
     }
   }
 }
