@@ -79,6 +79,7 @@ void whataboutbuttons(void){
     if ((getbtns() & 8) == 8){
       if (mode == 0){
         clearPixels();
+        display_update();
        // moveLetter(0);
       }
       else if (mode == 1){
@@ -98,6 +99,7 @@ void whataboutbuttons(void){
   if ((getbtns() & 2) == 2){
       if (mode == 0){
         clearPixels();
+        display_update();
        // moveLetter(1);
       }
       else if (mode == 1){
