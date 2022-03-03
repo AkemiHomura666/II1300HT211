@@ -63,17 +63,18 @@ void movePaddle(int a){
 void updatePonging(void){
 			while (1){
                 whataboutbuttons();
+                whataboutintersect();
             }
             
-			//whataboutintersect();
+			//
             //whataboutball();
 
 
 
 
 }
-    //int whataboutintersect(int,int)
-    //{
-       // int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
+void whataboutintersect(void){
+    // kod för direction change på paddle
 
-   // }
+    // kod för direction change på top / bottom
+}
