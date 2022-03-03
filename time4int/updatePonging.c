@@ -26,8 +26,8 @@ void printpaddle(int y, int p){
             delete_pixel(126,y+9);
             delete_pixel(127,y+9);
             }
-    display_update();
     quicksleep(1000000);
+    display_update();
     return;
     }
     
@@ -36,41 +36,26 @@ void printpaddle(int y, int p){
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
     ledupdate();
-    if ((a == 0 ) && (p1<24) && (p1 >= 1) ){
+    if ((a == 0 ) && (p1<24)){
     //code for moving paddle up
     p1 = p1-1;
-    //test
-    display_pixel(100,20);
-    display_update();
 
     printpaddle(p1,1);
    }
-    if ((a == 1) && (p1<24) && (p1 >= 1) ){
+    if ((a == 1) && (p1 >= 1) ){
         //code for moving paddle down  
         p1 = p1+1;
-
-            //test 2
-    display_pixel(110,15);
-    display_update();
-    
-
         printpaddle(p1,1);
     }
-    if (a == 2 && p2<24 && (p2 >= 1) ){
+    if (a == 2 && p2<24){
+        //code for moving paddle 2 up
         p2 = p2-1;
-
-                    //test 3
-    display_pixel(80,27);
-    display_update();
 
         printpaddle(p2,2);
         }
-    if (a == 3 && p2<24 && (p2 >= 1) ){
+    if ((a == 3) && (p2 >= 1) ){
+        //code for moving paddle 2 down
         p2 = p2+1;
-         //test 3
-    display_pixel(40,18);
-    display_update();
-
         printpaddle(p2,2);
   }
   return;
