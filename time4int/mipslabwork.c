@@ -17,8 +17,8 @@
 
 int counttimer = 0;
 int mytime = 0x0;
-p1 = 12
-p2 = 12
+p1 = 12;
+p2 = 12;
 
 char textstring[] = "text, more text, and even more text!";
 
