@@ -15,6 +15,8 @@ int main(void) {
 	mode = 1; //skips menu
 	score = 0;
 	level = 0;
+
+
         /*
 	  This will set the peripheral bus clock to the same frequency
 	  as the sysclock. That means 80 MHz, when the microcontroller
@@ -71,6 +73,9 @@ int main(void) {
 		else if(mode == 1) { //egentligen 1
             //updatePonging();
 			whataboutbuttons();
+			whataboutintersect();
+			int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
+
 			
         } 
 		else if(mode == 2) {
