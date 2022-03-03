@@ -14,6 +14,8 @@ void printpaddle(int y, int p){
         }
             delete_pixel(0,y+9);
             delete_pixel(1,y+9);
+    }
+
     else if (p==2){
             delete_pixel(126,y-1);
             delete_pixel(127,y-1);
@@ -23,12 +25,12 @@ void printpaddle(int y, int p){
         }
             delete_pixel(126,y+9);
             delete_pixel(127,y+9);
-               
-    }
-    }
+            }
     display_update();
     return;
-}
+    }
+    
+
 
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
