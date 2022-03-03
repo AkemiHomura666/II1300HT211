@@ -52,7 +52,7 @@ void movePaddle(int a){
 
         printpaddle(p2,2);
         }
-    if ((a == 3) && (p2<23){
+    if ((a == 3) && (p2<23)){
         //code for moving paddle 2 down
         p2 = p2+1;
         printpaddle(p2,2);
