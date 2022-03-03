@@ -74,13 +74,10 @@ void labwork( void )
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
-  mode = 0;
   level = getsw();
   //check button 4
     if ((getbtns() & 8) == 8){
       if (mode == 0){
-        clearPixels();
-        display_update();
        // moveLetter(0);
       }
       else if (mode == 1){
@@ -90,8 +87,6 @@ void whataboutbuttons(void){
   //check button 3
    if ((getbtns() & 4) == 4){
       if (mode == 0){
-        display_pixel(124,10);
-        display_update();
        // moveLetter(1);
       }
       else if (mode == 1){
@@ -101,8 +96,6 @@ void whataboutbuttons(void){
   //check button 2
   if ((getbtns() & 2) == 2){
       if (mode == 0){
-        clearPixels();
-        display_update();
        // moveLetter(1);
       }
       else if (mode == 1){
@@ -111,9 +104,7 @@ void whataboutbuttons(void){
   } 
   //check button 1
     if ((getbtns() & 1) == 1){
-      if (mode == 0){
-        display_pixel(60,10);
-        display_update();
+      if (mode == 0){        
        // moveLetter(1);
 
       }
@@ -121,7 +112,6 @@ void whataboutbuttons(void){
         movePaddle(3);
       }
   } 
-  mode = 1;
 }
 
 
