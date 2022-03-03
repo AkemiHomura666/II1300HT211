@@ -59,11 +59,12 @@ int whataboutintersect(int,int);
 void whataboutball(void);
 void ball(int, int);
 void goal(int);
+void display_hs(uint8_t[5][5]);
 
 int mode;
 int score[2];
 int level;
 int menuselection;
-char highscorename[3];
+uint8_t highscorename[5][5];
 int p1;
 int p2;

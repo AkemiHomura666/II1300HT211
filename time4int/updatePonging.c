@@ -89,5 +89,5 @@ void whataboutball(void){
 }
 
 void goal(int scorer){
-    score[scorer]++; 
+    score[scorer]++;
 }
