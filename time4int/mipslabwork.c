@@ -100,36 +100,6 @@ void whataboutbuttons(void){
   } */
 }
 
-//activated  by whataboutbuttons to move paddle up or down
-void movePaddle(int a){
-  if (a == 0){
-    //code for moving paddle up
-    	int x;
-			int y;
-			for (x = 0; x<130; x++){
-				for (y = 0; y<30; y++){
-				display_pixel(x,y);
-				}
-				ledupdate();
-				display_update();
-			}
-  }
-  else if (a == 1){
-    //code for moving paddle down  
-    	int x;
-			int y;
-			for (x = 0; x<130; x++){
-				for (y = 0; y<30; y++){
-				delete_pixel(x,y);
-				}
-				ledupdate();
-				display_update();
-			}
-}
-  else {
-    //
-  }
-  }
 
 
 /* void moveLetter(int input){
