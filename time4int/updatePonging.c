@@ -34,20 +34,38 @@ void movePaddle(int a){
     if (a == 0 && p1<24 && (p1 >= 1) ){
     //code for moving paddle up
     p1 = p1-1;
-    display_debug();
+    //test
+    display_pixel(100,20);
+    display_update();
+
     printpaddle(p1,1);
    }
     else if (a == 1 && p1<24 && (p1 >= 1) ){
         //code for moving paddle down  
         p1 = p1+1;
+
+            //test 2
+    display_pixel(110,15);
+    display_update();
+    
+
         printpaddle(p1,1);
     }
     else if (a == 2 && p2<24 && (p2 >= 1) ){
         p2 = p2-1;
+
+                    //test 3
+    display_pixel(80,27);
+    display_update();
+
         printpaddle(p2,2);
         }
     else if (a == 3 && p2<24 && (p2 >= 1) ){
         p2 = p2+1;
+         //test 3
+    display_pixel(40,18);
+    display_update();
+
         printpaddle(p2,2);
   }
 }
