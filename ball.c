@@ -7,18 +7,7 @@ int ballposition_y = 16;
 int ball_speed_x = 1;
 int ball_speed_y = 1;
 
-void ball_moving(void){
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + 1 + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y+ 1 + ball_speed_y);
-    display_pixel(ballposition_x - 1 + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y - 1 + ball_speed_y);    
-    ballposition_x = ballposition_x + + ball_speed_x;
-    ballposition_y = ballposition_y + + ball_speed_y;
-    ball_hit_paddle1();
-    ball_hit_paddle2();
-    ball_hit_side();
-}
+
 
 void horizontal_direction_change(void){
     ball_speed_x = -1 * ball_speed_x;
@@ -55,4 +44,27 @@ void ball_hit_side(void){
     if ballposition_y = 31{
         verticle_direction_change();
     }
-}      
+}
+
+void game_over(void){
+    if ball_position_x = 0{
+        
+    }
+    if ball_position_x = 127{
+
+    }
+}
+
+void ball_moving(void){
+    display_pixel(ballposition_x + ball_speed_x,ballposition_y + ball_speed_y);
+    display_pixel(ballposition_x + 1 + ball_speed_x,ballposition_y + ball_speed_y);
+    display_pixel(ballposition_x + ball_speed_x,ballposition_y+ 1 + ball_speed_y);
+    display_pixel(ballposition_x - 1 + ball_speed_x,ballposition_y + ball_speed_y);
+    display_pixel(ballposition_x + ball_speed_x,ballposition_y - 1 + ball_speed_y);    
+    ballposition_x = ballposition_x + + ball_speed_x;
+    ballposition_y = ballposition_y + + ball_speed_y;
+    ball_hit_paddle1();
+    ball_hit_paddle2();
+    ball_hit_side();
+    game_over();
+}
