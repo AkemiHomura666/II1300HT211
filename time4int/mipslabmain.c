@@ -71,10 +71,7 @@ int main(void) {
             //updateMenu();
         } 
 		else if(mode == 1) { //egentligen 1
-            //updatePonging();
-			whataboutbuttons();
-			whataboutintersect();
-			int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
+            updatePonging();
 
 			
         } 

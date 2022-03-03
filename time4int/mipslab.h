@@ -54,6 +54,7 @@ int getbtns(void);
 int getsw(void);
 void enable_interrupt(void);
 void paddle(int);
+void updatePonging(void);
 int whataboutintersect(int,int);
 
 

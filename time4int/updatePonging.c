@@ -2,4 +2,15 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
+void updatePonging(void){
+			whataboutbuttons();
+			whataboutintersect();
 
+
+
+
+}
+    int whataboutintersect(int,int)
+    {
+
+    }
