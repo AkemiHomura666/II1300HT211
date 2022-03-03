@@ -6,23 +6,24 @@ void printpaddle(int y, int p){
     int i=0;
     if (p==1)
     {
-        for (i = 0; i< 8; i++){
             delete_pixel(0,y-1);
             delete_pixel(1,y-1);
+        for (i = 0; i< 9; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
-            delete_pixel(0,y+1);
-            delete_pixel(1,y+1);
         }
+            delete_pixel(0,y+9);
+            delete_pixel(1,y+9);
     if (p=2){
-        for (i = 0; i< 8; i++){
+
             delete_pixel(126,y-1);
             delete_pixel(127,y-1);
+        for (i = 0; i< 9; i++){
             display_pixel(126,y+i);
             display_pixel(127,y+i);
-            delete_pixel(126,y+1);
-            delete_pixel(127,y+1);
         }
+            delete_pixel(126,y+9);
+            delete_pixel(127,y+9);
                
     }
     }
