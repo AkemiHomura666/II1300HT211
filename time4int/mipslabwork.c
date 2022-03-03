@@ -76,6 +76,49 @@ void whataboutbuttons(void){
   mode = 1;
   level = getsw();
   //check button 4
+    if ((getbtns() & 8) == 8){
+      if (mode == 0){
+       // moveLetter(0);
+      }
+      else if (mode == 1){
+        movePaddle(0);
+      }
+  }
+  //check button 3
+   if ((getbtns() & 4) == 4){
+      if (mode == 0){
+       // moveLetter(1);
+      }
+      else if (mode == 1){
+        movePaddle(1);
+      }
+  }
+  if ((getbtns() & 2) == 2){
+      if (mode == 0){
+       // moveLetter(1);
+      }
+      else if (mode == 1){
+        movePaddle(3);
+      }
+  } 
+    if ((getbtns() & 1) == 1){
+      if (mode == 0){
+       // moveLetter(1);
+      }
+      else if (mode == 1){
+        movePaddle(3);
+      }
+  } 
+}
+
+
+
+//old what about buttons:
+
+/* void whataboutbuttons(void){
+  mode = 1;
+  level = getsw();
+  //check button 4
     if ((getbtns() & 4) == 4){
       if (mode == 0){
        // moveLetter(0);
@@ -93,12 +136,25 @@ void whataboutbuttons(void){
         movePaddle(1);
       }
   }
+  if ((getbtns() & 1) == 1){
+      if (mode == 0){
+       // moveLetter(1);
+      }
+      else if (mode == 1){
+        movePaddle(3);
+      }
+  } 
+} */
 
-/*     if ((getbtns() & 1) == 1){
-      mytime = ((mytime & 65295) | (sw << 4));
-    printf("knapp 3 är tryckt%d", mytime);
-  } */
-}
+
+
+
+
+
+
+
+
+
 
 
 
