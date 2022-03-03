@@ -57,6 +57,7 @@ void paddle(int);
 void updatePonging(void);
 int whataboutintersect(int,int);
 void whataboutball(void);
+void ball(int, int);
 
 
 int mode;
