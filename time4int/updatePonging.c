@@ -91,3 +91,9 @@ void whataboutball(void){
 void goal(int scorer){
     score[scorer]++;
 }
+
+void resetponging(void){
+    score[0] = 0;
+    score[1] = 0;
+    
+}

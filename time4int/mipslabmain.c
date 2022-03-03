@@ -72,10 +72,10 @@ int main(void) {
         } 
 		else if(mode == 1) { //egentligen 1
             updatePonging();
-
 			
         } 
 		else if(mode == 2) {
+			resetponging();
             //updateLose();
         } 
 		else if(mode == 3) {
