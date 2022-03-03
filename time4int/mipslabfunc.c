@@ -67,7 +67,7 @@ void delete_pixel(int x, int y) {
 		//int posinarray = section*128 + x;
     int posinarray = x + (y/8)*128;
 		//We'll do a OR with pixel w current value in the column (1 = 1, 2 = 10, 3 = 100 ...)
-		dataArray[posinarray] = dataArray[posinarray] | (0x0 << cyo);
+		dataArray[posinarray] = dataArray[posinarray] && (0x0 << cyo);
 	}
 }
 
