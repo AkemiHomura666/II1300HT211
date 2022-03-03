@@ -7,20 +7,20 @@ void movePaddle(int a){
   if (a == 0){
     //code for moving paddle up
     p1 = p1-1;
-    printpaddle(p1,1)
+    printpaddle(p1,1);
   }
     else if (a == 1){
         //code for moving paddle down  
         p1 = p1+1;
-        printpaddle(p1,1)
+        printpaddle(p1,1);
     }
     else if (a == 2){
         p2 = p2-1;
-        printpaddle(p2,2)
+        printpaddle(p2,2);
         }
     else if (a == 3){
         p2 = p2+1;
-        printpaddle(p2,2)
+        printpaddle(p2,2);
   }
 
 void updatePonging(void){
@@ -34,7 +34,7 @@ void updatePonging(void){
 }
     int whataboutintersect(int,int)
     {
-        int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
+       // int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
 
     }
 

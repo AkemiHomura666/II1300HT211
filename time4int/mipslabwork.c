@@ -73,7 +73,6 @@ void labwork( void )
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
-  mode = 1;
   level = getsw();
   //check button 4
     if ((getbtns() & 8) == 8){
