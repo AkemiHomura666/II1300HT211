@@ -26,7 +26,7 @@ void ball_hit_paddle1(void){
             }
         }
     }
-
+}
 void ball_hit_paddle2(void){
     if(ballposition_x = 126) {
         int i;
@@ -36,22 +36,22 @@ void ball_hit_paddle2(void){
             }
         }
     } 
-
+}
 void ball_hit_side(void){ 
-    if ballposition_y = 0{
+    if (ballposition_y = 0){
         verticle_direction_change();
     }
-    if ballposition_y = 31{
+    if (ballposition_y = 31){
         verticle_direction_change();
     }
 }
 
 void game_over(void){
-    if ball_position_x = 0{
-        
+    if (ballposition_x = 0){
+        goal(0);
     }
-    if ball_position_x = 127{
-
+    if (ballposition_x = 127){
+        goal(1);
     }
 }
 
