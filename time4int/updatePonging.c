@@ -34,6 +34,7 @@ void movePaddle(int a){
     if (a == 0 && p1<24 && (p1 >= 1) ){
     //code for moving paddle up
     p1 = p1-1;
+    display_debug();
     printpaddle(p1,1);
    }
     else if (a == 1 && p1<24 && (p1 >= 1) ){
