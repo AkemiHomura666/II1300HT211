@@ -42,6 +42,8 @@ void labinit( void )
   IFSCLR(0)=0x100;
   T2CONSET = 0x8000;
   return;
+  p1 = 12;
+  p2 = 12;
 }
 
 //delay + swag
