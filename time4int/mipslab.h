@@ -56,6 +56,7 @@ void enable_interrupt(void);
 void paddle(int);
 void updatePonging(void);
 int whataboutintersect(int,int);
+void whataboutball(void);
 
 
 int mode;
