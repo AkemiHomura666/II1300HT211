@@ -85,6 +85,7 @@ void erase(void)
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
+  mode = 0;
   level = getsw();
   //check button 4
     if ((getbtns() & 8) == 8){
