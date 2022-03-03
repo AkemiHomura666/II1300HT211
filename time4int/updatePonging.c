@@ -8,26 +8,26 @@ void printpaddle(int y, int p){
     {
             delete_pixel(0,y-1);
             delete_pixel(1,y-1);
+            delete_pixel(0,y+9);
+            delete_pixel(1,y+9);
         for (i = 0; i< 9; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
         }
-            delete_pixel(0,y+9);
-            delete_pixel(1,y+9);
     }
 
     else if (p==2){
             delete_pixel(126,y-1);
             delete_pixel(127,y-1);
+            delete_pixel(126,y+9);
+            delete_pixel(127,y+9);
         for (i = 0; i< 9; i++){
             display_pixel(126,y+i);
             display_pixel(127,y+i);
         }
-            delete_pixel(126,y+9);
-            delete_pixel(127,y+9);
             }
         display_update();
-    quicksleep(1000000);
+    quicksleep(1000000/level);
     return;
     }
     
@@ -37,11 +37,11 @@ void printpaddle(int y, int p){
 void movePaddle(int a){
     ledupdate();
     if ((a == 0 ) && (p1 >= 1)){
-    //code for moving paddle up
-    p1 = p1-1;
-    printpaddle(p1,1);
+        //code for moving paddle up
+        p1 = p1-1;
+        printpaddle(p1,1);
    }
-    if ((a == 1) && (p1<24)){
+    if ((a == 1) && (p1<23)){
         //code for moving paddle down  
         p1 = p1+1;
         printpaddle(p1,1);
@@ -52,7 +52,7 @@ void movePaddle(int a){
 
         printpaddle(p2,2);
         }
-    if ((a == 3) && p2<24 ){
+    if ((a == 3) && (p2<23){
         //code for moving paddle 2 down
         p2 = p2+1;
         printpaddle(p2,2);
