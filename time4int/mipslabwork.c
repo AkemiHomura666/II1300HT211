@@ -72,6 +72,7 @@ void labwork( void )
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
+  mode = 1;
   level = getsw();
   //check button 4
     if ((getbtns() & 4) == 4){
@@ -136,11 +137,13 @@ void moveLetter(int input){
 // if 
   case 0:
   letterselector++
+  int i;
   for (i = 0; i<60; i++){
 
   }
   break;
   case 1:
+  int i;
   for (i = 0; i<60; i++){
 
   }
