@@ -58,3 +58,5 @@ void enable_interrupt(void);
 int mode;
 int score;
 int level;
+int menuselection;
+char[3] highscorename;

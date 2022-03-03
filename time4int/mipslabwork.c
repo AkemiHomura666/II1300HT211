@@ -76,7 +76,7 @@ void whataboutbuttons(void){
   //check button 4
     if ((getbtns() & 4) == 4){
       if (mode == 0){
-        moveMenu(0);
+        moveLetter(0);
       }
       else if (mode == 1){
         movePaddle(0);
@@ -85,7 +85,7 @@ void whataboutbuttons(void){
   //check button 3
    if ((getbtns() & 2) == 2){
       if (mode == 0){
-        moveMenu(1);
+        moveLetter(1);
       }
       else if (mode == 1){
         movePaddle(1);
@@ -128,4 +128,21 @@ void movePaddle(int a){
     //
   }
   }
+}
+
+void moveLetter(int input){
+  
+  switch (input)
+// if 
+  case 0:
+  letterselector++
+  for (i = 0; i<60; i++){
+
+  }
+  break;
+  case 1:
+  for (i = 0; i<60; i++){
+
+  }
+  break;
 }
