@@ -33,6 +33,7 @@ void labinit( void )
   *trise &= ~0xff; /* Port E is used for the LED 
   Set bits 0 through 7 to 0 (output) */
   TRISD &= 0x0fe0;
+  TRISF &= 0x2;
 
   T2CONCLR = 0x0;     // Stop timer and clear control register
   T2CONSET = 0x70;    // Set prescale to 1:256
@@ -73,7 +74,6 @@ void labwork( void )
 
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
-  mode = 0;
   level = getsw();
   //check button 4
     if ((getbtns() & 8) == 8){
