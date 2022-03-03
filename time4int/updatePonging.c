@@ -56,7 +56,10 @@ void movePaddle(int a){
 }
 
 void updatePonging(void){
-			whataboutbuttons();
+			while (1){
+                whataboutbuttons();
+            }
+            
 			//whataboutintersect();
             //whataboutball();
 
