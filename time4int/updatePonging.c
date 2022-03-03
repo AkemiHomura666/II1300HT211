@@ -31,12 +31,13 @@ void printpaddle(int y, int p){
 
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
-  if (a == 0 && p1<24 && p1>-1){
+    
+    if (a == 0 && p1<24 && p1>-1){
     //code for moving paddle up
     p1 = p1-1;
     printpaddle(p1,1);
     display_update();
-  }
+   }
     else if (a == 1 && p1<24 && p1>-1){
         //code for moving paddle down  
         p1 = p1+1;
