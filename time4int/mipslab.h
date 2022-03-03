@@ -63,3 +63,5 @@ int score;
 int level;
 int menuselection;
 char highscorename[3];
+int p1;
+int p2;
