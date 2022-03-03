@@ -73,6 +73,7 @@ void labwork( void )
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
   level = getsw();
+  //check button 4
     if ((getbtns() & 4) == 4){
       if (mode == 0){
         moveMenu(0);
@@ -81,6 +82,7 @@ void whataboutbuttons(void){
         movePaddle(0);
       }
   }
+  //check button 3
    if ((getbtns() & 2) == 2){
       if (mode == 0){
         moveMenu(1);
@@ -100,9 +102,27 @@ void whataboutbuttons(void){
 void movePaddle(int a){
   if (a == 0){
     //code for moving paddle up
+    	int x;
+			int y;
+			for (x = 0; x<130; x++){
+				for (y = 0; y<30; y++){
+				display_pixel(x,y);
+				}
+				ledupdate();
+				display_update();
+			}
   }
   else if (a == 1){
     //code for moving paddle down  
+    	int x;
+			int y;
+			for (x = 0; x<130; x++){
+				for (y = 0; y<30; y++){
+				delete_pixel(x,y);
+				}
+				ledupdate();
+				display_update();
+			}
 }
   else {
     //

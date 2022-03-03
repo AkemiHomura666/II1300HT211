@@ -70,16 +70,7 @@ int main(void) {
         } 
 		else if(mode == 1) { //egentligen 1
             //updatePonging();
-			int x;
-			int y;
-			for (x = 0; x<130; x++){
-				for (y = 0; y<30; y++){
-				display_pixel(x,y);
-				}
-				ledupdate();
-				display_update();
-			}
-			
+			whataboutbuttons();
 			
         } 
 		else if(mode == 2) {
