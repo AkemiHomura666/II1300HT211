@@ -64,17 +64,31 @@ void updatePonging(void){
 			while (1){
                 whataboutbuttons();
                 whataboutintersect();
+                whataboutball();
             }
-            
-			//
-            //whataboutball();
-
-
-
-
 }
+
+
 void whataboutintersect(void){
     // kod för direction change på paddle
 
     // kod för direction change på top / bottom
+
+    //kod för goaaal
+    goal(0);
+    return;
+}
+
+void whataboutball(void){
+    // kod för ball position
+
+    // kod för ball movement
+
+    //
+    return;
+}
+
+void goal(int scorer){
+    score[scorer]++;
+    
 }
