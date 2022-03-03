@@ -30,7 +30,7 @@ void printpaddle(int y, int p){
 
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
-    
+    ledupdate();
     if (a == 0 && p1<24 && (p1 >= 1) ){
     //code for moving paddle up
     p1 = p1-1;
