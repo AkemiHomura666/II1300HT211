@@ -71,12 +71,25 @@ void labwork( void )
 //display_image(96, icon);
 }
 
+void erase(void)
+{
+  int i = 0;
+  int y = 0;
+  for (i = 0; i< 128; i++){ 
+    for (y = 0; y< 8; y++){
+      display_pixel(i,y);
+    }
+  }
+  display_update();
+}
+
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
   level = getsw();
   //check button 4
     if ((getbtns() & 8) == 8){
       if (mode == 0){
+        erase();
        // moveLetter(0);
       }
       else if (mode == 1){
@@ -84,25 +97,28 @@ void whataboutbuttons(void){
       }
   }
   //check button 3
-   if ((getbtns() & 4) == 4){
+   else if ((getbtns() & 4) == 4){
       if (mode == 0){
+        
        // moveLetter(1);
       }
       else if (mode == 1){
         movePaddle(1);
       }
   }
-  if ((getbtns() & 2) == 2){
+  else if ((getbtns() & 2) == 2){
       if (mode == 0){
+        erase();
        // moveLetter(1);
       }
       else if (mode == 1){
         movePaddle(2);
       }
   } 
-    if ((getbtns() & 1) == 1){
+    else if ((getbtns() & 1) == 1){
       if (mode == 0){
        // moveLetter(1);
+
       }
       else if (mode == 1){
         movePaddle(3);

@@ -12,7 +12,7 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int main(void) {
-	mode = 1; //skips menu
+	mode = 0; //skips menu
 	score = 0;
 	level = 0;
 
