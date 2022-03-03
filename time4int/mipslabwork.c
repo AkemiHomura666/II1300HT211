@@ -132,7 +132,7 @@ void movePaddle(int a){
   }
 
 
-void moveLetter(int input){
+/* void moveLetter(int input){
   
   switch (input)
 // if 
@@ -149,4 +149,4 @@ void moveLetter(int input){
 
   }
   break;
-}
+} */
