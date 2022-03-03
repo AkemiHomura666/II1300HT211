@@ -32,15 +32,15 @@ void updatePonging(void){
 
 
 }
-    int whataboutintersect(int,int)
-    {
+    //int whataboutintersect(int,int)
+    //{
        // int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
 
-    }
+   // }
 
 void printpaddle(int y, int p){
     int i=0;
-    if (p=1){
+    if (p==1){
         for (i = 0; i< 8; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
