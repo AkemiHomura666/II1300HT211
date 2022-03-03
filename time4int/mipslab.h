@@ -58,10 +58,10 @@ void updatePonging(void);
 int whataboutintersect(int,int);
 void whataboutball(void);
 void ball(int, int);
-
+void goal(int);
 
 int mode;
-int score;
+int score[2];
 int level;
 int menuselection;
 char highscorename[3];
