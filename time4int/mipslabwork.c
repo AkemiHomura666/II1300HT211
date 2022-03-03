@@ -98,7 +98,7 @@ void whataboutbuttons(void){
        // moveLetter(1);
       }
       else if (mode == 1){
-        movePaddle(3);
+        movePaddle(2);
       }
   } 
     if ((getbtns() & 1) == 1){
