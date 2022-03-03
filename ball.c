@@ -2,8 +2,8 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
-int ballposition_x;
-int ballposition_y;
+int ballposition_x = 64;
+int ballposition_y = 16;
 int ball_speed_x = 30;
 int ball_speed_y = 10;
 
@@ -17,19 +17,30 @@ void ball(int x, int y){
     ballposition_y = y;
 }
 
-void horizontal_direction_change(int x){
+void horizontal_direction_change(void){
     ball_speed_x = -1 * ball_speed_x;
 }
 
-void verticle_direction_change(int x){
+void verticle_direction_change(void){
     ball_speed_y = -1 * ball_speed_y;
 }
 
-void ball_hit_paddle( ball_speed_x, int y){
+void ball_hit_paddle1(p1){
     if(ballposition_x = 1) {
-        if{
-            
+        int i;
+        for(i = p1; i< p1 + 9; i++){
+            if(ballposition_y = i){
+               horizontal_direction_change();
+            }
         }
-            display_pixel(0,y+i);
-            display_pixel(1,y+i);
-}
+    }
+
+void ball_hit_paddle2(p2){
+    if(ballposition_x = 126) {
+        int i;
+        for(i = p2; i< p2 + 9; i++){
+            if(ballposition_y = i){
+               horizontal_direction_change();
+            }
+        }
+    }    
