@@ -12,5 +12,10 @@ void updatePonging(void){
 }
     int whataboutintersect(int,int)
     {
+        int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
 
     }
+
+void printpaddle(int x, int y){
+    
+}
