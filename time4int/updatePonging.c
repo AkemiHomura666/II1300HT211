@@ -95,5 +95,4 @@ void goal(int scorer){
 void resetponging(void){
     score[0] = 0;
     score[1] = 0;
-    
 }
