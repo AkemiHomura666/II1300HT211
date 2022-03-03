@@ -70,7 +70,7 @@ int main(void) {
         if(mode == 0) {
             //updateMenu();
         } 
-		else if(mode == 1) { //egentligen 1
+		else if(mode == 0) { //egentligen 1
             updatePonging();
 
 			
