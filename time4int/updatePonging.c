@@ -38,6 +38,19 @@ void updatePonging(void){
 
     }
 
-void printpaddle(int x, int y){
-    
-}
+void printpaddle(int y, int p){
+    int i=0;
+    if (p=1){
+        for (i = 0; i< 8; i++){
+            display_pixel(0,y+i);
+            display_pixel(1,y+i);
+            display_pixel(2,y+i);
+        }
+    if (p=2){
+        for (i = 0; i< 8; i++){
+            display_pixel(125,y+i);
+            display_pixel(126,y+i);
+            display_pixel(127,y+i);
+        }
+               
+    }
