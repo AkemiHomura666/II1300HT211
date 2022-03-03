@@ -141,6 +141,8 @@ void display_init(void) {
 	
 	spi_send_recv(0xDA);
 	spi_send_recv(0x20);
+
+  spi_send_recv(0x20);
   spi_send_recv(0x0);
 	
 	spi_send_recv(0xAF);
