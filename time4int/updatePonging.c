@@ -2,6 +2,26 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
+void printpaddle(int y, int p){
+    int i=0;
+    if (p==1)
+    {
+        for (i = 0; i< 8; i++){
+            display_pixel(0,y+i);
+            display_pixel(1,y+i);
+            display_pixel(2,y+i);
+        }
+    if (p=2){
+        for (i = 0; i< 8; i++){
+            display_pixel(125,y+i);
+            display_pixel(126,y+i);
+            display_pixel(127,y+i);
+        }
+               
+    }
+    }
+}
+
 //activated  by whataboutbuttons to move paddle up or down
 void movePaddle(int a){
   if (a == 0){
@@ -38,23 +58,3 @@ void updatePonging(void){
        // int relativeIntersectY = (paddle1Y+(PADDLELENGTH/2)) - intersectY;
 
    // }
-
-void printpaddle(int y, int p){
-    int i=0;
-    if (p==1)
-    {
-        for (i = 0; i< 8; i++){
-            display_pixel(0,y+i);
-            display_pixel(1,y+i);
-            display_pixel(2,y+i);
-        }
-    if (p=2){
-        for (i = 0; i< 8; i++){
-            display_pixel(125,y+i);
-            display_pixel(126,y+i);
-            display_pixel(127,y+i);
-        }
-               
-    }
-    }
-}
