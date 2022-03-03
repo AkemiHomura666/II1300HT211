@@ -78,7 +78,7 @@ void labwork( void )
 void whataboutbuttons(void){
   level = getsw();
   //check button 4
-    if ((getbtns() & 8) == 8){
+    while ((getbtns() & 8) == 8){
       if (mode == 0){
        // moveLetter(0);
       }
@@ -87,7 +87,7 @@ void whataboutbuttons(void){
       }
   }
   //check button 3
-   if ((getbtns() & 4) == 4){
+   while ((getbtns() & 4) == 4){
       if (mode == 0){
        // moveLetter(1);
       }
@@ -96,7 +96,7 @@ void whataboutbuttons(void){
       }
   }
   //check button 2
-  if ((getbtns() & 2) == 2){
+  while ((getbtns() & 2) == 2){
       if (mode == 0){
        // moveLetter(1);
       }
@@ -105,7 +105,7 @@ void whataboutbuttons(void){
       }
   } 
   //check button 1
-    if ((getbtns() & 1) == 1){
+    while ((getbtns() & 1) == 1){
       if (mode == 0){        
        // moveLetter(1);
 
