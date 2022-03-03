@@ -41,7 +41,7 @@ void movePaddle(int a){
 
     printpaddle(p1,1);
    }
-    else if ((a == 1 && p1<24 && (p1 >= 1) ){
+    else if ((a == 1) && (p1<24) && (p1 >= 1) ){
         //code for moving paddle down  
         p1 = p1+1;
 
