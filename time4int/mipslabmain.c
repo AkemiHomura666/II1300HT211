@@ -67,6 +67,8 @@ int main(void) {
 	while(mode == 1) {
     ledupdate();
 	resetponging();
+	printpaddle(p1,1);
+	printpaddle(p2,2);
         //clearPixels();
 		//display_update();
         if(mode == 0) {
