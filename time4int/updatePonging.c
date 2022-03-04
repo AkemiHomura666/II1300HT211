@@ -91,10 +91,6 @@ void updatePonging(void){
 void whataboutintersect(void){
     // kod för direction change på paddle
     check_hit();
-    printpaddle(p1,2);
-    printpaddle(p1,1);
-    printpaddle(p2,2);
-    printpaddle(p2,1);
     // kod för direction change på top / bottom
     game_over();
     //kod för goaaal
