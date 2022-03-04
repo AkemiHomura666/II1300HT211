@@ -55,7 +55,7 @@ int getsw(void);
 void enable_interrupt(void);
 void paddle(int);
 void updatePonging(void);
-int whataboutintersect(int,int);
+void whataboutintersect(void);
 void whataboutball(void);
 void ball(int, int);
 void goal(int);
@@ -63,6 +63,8 @@ void display_hs(uint8_t[5][5]);
 void resetponging(void);
 void updateMenu(void);
 void moveMenu(int);
+void check_hit(void);
+void game_over(void);
 
 int mode;
 int score[2];
