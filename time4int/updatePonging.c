@@ -31,7 +31,7 @@ void printpaddle(int y, int p){
              delete_pixel(0,y-1);
             delete_pixel(1,y-1);
             delete_pixel(0,y+9);
-            delete_pixel(1,y+9); */
+            delete_pixel(1,y+9); 
             for (i = 0; i< 9; i++){
             display_pixel(126,y+i);
             display_pixel(127,y+i);
@@ -39,7 +39,7 @@ void printpaddle(int y, int p){
              delete_pixel(126,y-1);
             delete_pixel(127,y-1);
             delete_pixel(126,y+9);
-            delete_pixel(127,y+9); */
+            delete_pixel(127,y+9); 
             for (i = 0; i< 9; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
