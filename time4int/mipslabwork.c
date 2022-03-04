@@ -79,7 +79,7 @@ void labwork( void )
 //checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
   //level set by switches
-  if !(getsw ==0){
+  if (!getsw ==0){
     level = getsw();
   }
   else level = 1;
