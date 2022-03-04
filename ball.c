@@ -56,6 +56,8 @@ void game_over(void){
 }
 
 void ball_moving(void){
+    delete_pixel(ballposition_x, ballposition_y);
+    delete_pixel(ballposition_x, ballposition_y);
     display_pixel(ballposition_x + ball_speed_x,ballposition_y + ball_speed_y);
     display_pixel(ballposition_x + 1 + ball_speed_x,ballposition_y + ball_speed_y);
     display_pixel(ballposition_x + ball_speed_x,ballposition_y+ 1 + ball_speed_y);
