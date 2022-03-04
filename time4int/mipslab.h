@@ -38,7 +38,7 @@ void display_debug( volatile int * const addr );
 /* Declare bitmap array containing font */
 extern const uint8_t const font[128*8];
 /* Declare bitmap array containing icon */
-extern const uint8_t const icon[128*32];
+extern const uint8_t const icon[128];
 /* Declare text buffer for display output */
 extern char textbuffer[4][16];
 
@@ -55,7 +55,7 @@ int getsw(void);
 void enable_interrupt(void);
 void paddle(int);
 void updatePonging(void);
-void whataboutintersect(void);
+int whataboutintersect(int,int);
 void whataboutball(void);
 void ball(int, int);
 void goal(int);
@@ -63,8 +63,6 @@ void display_hs(uint8_t[5][5]);
 void resetponging(void);
 void updateMenu(void);
 void moveMenu(int);
-void check_hit(void);
-void game_over(void);
 
 int mode;
 int score[2];

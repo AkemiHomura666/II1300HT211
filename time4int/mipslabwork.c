@@ -84,7 +84,7 @@ void whataboutbuttons(void){
   }
   else level = 1;
   //check button 4
-    while ((getbtns() & 8) == 8){
+    if ((getbtns() & 8) == 8){
       if (mode == 0){
        // moveLetter(0);
        //moves menu selection upwards
@@ -96,7 +96,7 @@ void whataboutbuttons(void){
       }
   }
   //check button 3
-   while ((getbtns() & 4) == 4){
+   if ((getbtns() & 4) == 4){
       if (mode == 0){
        // moveLetter(1);
        //moves menu selection upwards
@@ -108,7 +108,7 @@ void whataboutbuttons(void){
       }
   }
   //check button 2
-  while ((getbtns() & 2) == 2){
+  if ((getbtns() & 2) == 2){
       if (mode == 0){
        // moveLetter(1);
       //enters menu selection
@@ -120,7 +120,7 @@ void whataboutbuttons(void){
       }
   } 
   //check button 1
-    while ((getbtns() & 1) == 1){
+    if ((getbtns() & 1) == 1){
       if (mode == 0){        
        // moveLetter(1);
 
