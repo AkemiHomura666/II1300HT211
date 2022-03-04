@@ -26,6 +26,16 @@ void printpaddle(int y, int p){
             display_pixel(127,y+i);
         }
             }
+    else if (p==3(){
+            for (i = 0; i< 9; i++){
+            display_pixel(126,y+i);
+            display_pixel(127,y+i);
+        }
+            for (i = 0; i< 9; i++){
+            display_pixel(0,y+i);
+            display_pixel(1,y+i);
+        }
+    }
         display_update();
     quicksleep(1000000/level);
     return;
@@ -94,7 +104,8 @@ void goal(int scorer){
     ball_speed_y = 1;
     p1 = 12;
     p2 = 12;
-    return;
+    clearPixels();
+    updatePonging();
 }
 
 void resetponging(void){

@@ -81,6 +81,8 @@ void whataboutbuttons(void){
   //level set by switches
   if (!getsw ==0){
     level = getsw();
+    ball_speed_x = 1 * (level/2);
+    ball_speed_y = 1 * (level/2);
   }
   else level = 1;
   //check button 4
