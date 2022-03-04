@@ -105,7 +105,7 @@ void goal(int scorer){
     p1 = 12;
     p2 = 12;
     clearPixels();
-    updatePonging();
+    //updatePonging();
 }
 
 void resetponging(void){
