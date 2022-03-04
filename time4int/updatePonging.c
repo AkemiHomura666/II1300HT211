@@ -88,14 +88,16 @@ void whataboutball(void){
 
 void goal(int scorer){
     score[scorer]++;
-    resetponging();
+    ballposition_x = 64;
+    ballposition_y = 16;
+    ball_speed_x = 1;
+    ball_speed_y = 1;
+    p1 = 12;
+    p2 = 12;
+    return;
 }
 
 void resetponging(void){
     score[0] = 0;
     score[1] = 0;
-    ballposition_x = 64;
-    ballposition_y = 16;
-    ball_speed_x = 1;
-    ball_speed_y = 1;
 }
