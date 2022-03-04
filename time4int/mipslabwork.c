@@ -46,6 +46,9 @@ void labinit( void )
   return;
   p1 = 12;
   p2 = 12;
+  resetponging();
+	printpaddle(p1,1);
+	printpaddle(p2,2);
 }
 
 //delay + swag

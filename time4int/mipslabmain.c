@@ -13,7 +13,7 @@
 
 int main(void) {
 	mode = 1; //skips menu
-	score[0] = -1;
+	score[0] = 0;
 	score[1] = 0;
 	level = 0;
 
@@ -66,9 +66,6 @@ int main(void) {
 	labinit(); /* Do any lab-specific initialization */
 	while(mode == 1) {
     ledupdate();
-	resetponging();
-	printpaddle(p1,1);
-	printpaddle(p2,2);
         //clearPixels();
 		//display_update();
         if(mode == 0) {
