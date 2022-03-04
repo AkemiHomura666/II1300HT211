@@ -73,3 +73,7 @@ int menuselection;
 uint8_t highscorename[5][5];
 int p1;
 int p2;
+int ballposition_x;
+int ballposition_y;
+int ball_speed_x;
+int ball_speed_y;
