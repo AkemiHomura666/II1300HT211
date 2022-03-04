@@ -26,7 +26,7 @@ void printpaddle(int y, int p){
             display_pixel(127,y+i);
         }
             }
-    else if (p==3(){
+    else if (p==3){
             for (i = 0; i< 9; i++){
             display_pixel(126,y+i);
             display_pixel(127,y+i);
