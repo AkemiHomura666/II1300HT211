@@ -27,8 +27,8 @@ void printpaddle(int y, int p){
             display_pixel(127,y+i);
         }
             }
-    else if (p==3){
-/*             delete_pixel(0,y-1);
+/*     else if (p==3){
+             delete_pixel(0,y-1);
             delete_pixel(1,y-1);
             delete_pixel(0,y+9);
             delete_pixel(1,y+9); */
@@ -36,14 +36,14 @@ void printpaddle(int y, int p){
             display_pixel(126,y+i);
             display_pixel(127,y+i);
         }             
-/*             delete_pixel(126,y-1);
+             delete_pixel(126,y-1);
             delete_pixel(127,y-1);
             delete_pixel(126,y+9);
             delete_pixel(127,y+9); */
             for (i = 0; i< 9; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
-        }
+        } */
     }
         display_update();
     quicksleep(1000000/level);
@@ -91,8 +91,10 @@ void updatePonging(void){
 void whataboutintersect(void){
     // kod för direction change på paddle
     check_hit();
-    printpaddle(p1,3);
-    printpaddle(p2,3);
+    printpaddle(p1,2);
+    printpaddle(p1,1);
+    printpaddle(p2,2);
+    printpaddle(p2,1);
     // kod för direction change på top / bottom
     game_over();
     //kod för goaaal
