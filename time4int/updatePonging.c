@@ -116,7 +116,7 @@ void goal(int scorer){
     int i;
     int j;
     int g;
-    for (g = 0; g<score[1]; g++){
+/*     for (g = 0; g<score[1]; g++){
     for (i = 0; i<14; i+2){
         display_hex(32+i, 1, 63);
         }
@@ -125,7 +125,7 @@ void goal(int scorer){
     for (i = 0; i<14; i+2){
         display_hex(95+i, 1, 63);
         }
-    }
+    } */
     updatePonging();
 }
 
