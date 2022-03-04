@@ -92,6 +92,7 @@ void display_hs(uint8_t tablearray[][])
       display_hex(50,(i+1),highscorename[i][j]);
     }
   }
+  display_update();
 }
 
 
