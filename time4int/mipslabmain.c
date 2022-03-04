@@ -66,6 +66,7 @@ int main(void) {
 	labinit(); /* Do any lab-specific initialization */
 	while(mode == 1) {
     ledupdate();
+	resetponging();
         //clearPixels();
 		//display_update();
         if(mode == 0) {
