@@ -75,7 +75,6 @@ int main(void) {
         } 
 		else if(mode == 2) {
 			resetponging();
-            //updateLose();
         } 
 		else if(mode == 3) {
             //updateLeaderboard();
