@@ -82,6 +82,8 @@ void updatePonging(void){
 void whataboutintersect(void){
     // kod för direction change på paddle
     check_hit();
+    printpaddle(p1,3);
+    printpaddle(p2,3);
     // kod för direction change på top / bottom
     game_over();
     //kod för goaaal
@@ -105,7 +107,7 @@ void goal(int scorer){
     p1 = 12;
     p2 = 12;
     clearPixels();
-    updatePonging();
+    updatePonging(); //?
 }
 
 void resetponging(void){
