@@ -115,13 +115,18 @@ void goal(int scorer){
     clearPixels();
     int i;
     int j;
-    for (i = 0; i<score[1]; i++){
-    display_hex(32+2+i, 1, 63);
+    int g;
+    for (i = 0; i<14; i+2){
+        for (g = 0; g<score[1]; g++){
+        display_hex(32+i, 1, 63);
+        }
     }
-    for (j = 0; j<score[0]; j++){
-    display_hex(95+2+i, 1, 63);
-    }    
-    updatePonging(); //?
+    for (i = 0; i<14; i+2){
+        for (g = 0; g<score[1]; g++){
+        display_hex(95+i, 1, 63);
+        }
+    }
+    updatePonging();
 }
 
 void resetponging(void){
