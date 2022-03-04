@@ -25,7 +25,7 @@ void ball_hit_paddle1(void){
                horizontal_direction_change();
             }
         }
-        printpaddle(p2,3);
+        //printpaddle(p1,3);
     }
 
 void ball_hit_paddle2(void){
@@ -36,7 +36,7 @@ void ball_hit_paddle2(void){
                horizontal_direction_change();
             }
         }
-        printpaddle(p2,3);
+        //printpaddle(p2,3);
         
     } 
 
