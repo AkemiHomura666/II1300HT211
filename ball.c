@@ -48,10 +48,10 @@ void ball_hit_side(void){
 
 void game_over(void){
     if (ball_position_x = 0){
-        
+        goal(0);
     }
     if (ball_position_x = 127){
-
+        goal(1);
     }
 }
 
