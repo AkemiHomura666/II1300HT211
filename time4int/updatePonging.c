@@ -71,9 +71,9 @@ void updatePonging(void){
 
 void whataboutintersect(void){
     // kod för direction change på paddle
-
+    check_hit();
     // kod för direction change på top / bottom
-
+    game_over();
     //kod för goaaal
     goal(0);
     return;
@@ -81,9 +81,8 @@ void whataboutintersect(void){
 
 void whataboutball(void){
     // kod för ball position
-
+    ball_moving();
     // kod för ball movement
-
     //
     return;
 }
