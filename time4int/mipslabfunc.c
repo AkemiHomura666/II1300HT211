@@ -84,18 +84,18 @@ void display_hex(int x, int linje, int invalue) {
 	}
 }
 
-void display_hs(uint8_t tablearray[][])
+/* void display_hs(uint8_t tablearray[][])
 {
   int i,j;
   for(i = 0; i < 5; i++){
     highscorename[i][0] = i;
-    highscorename[i][1] = dank_font[17]
+    highscorename[i][1] = dank_font[17];
     for(j = 0; j < 5; j++){
       display_hex(50,(i+1),highscorename[i][j]);
     }
   }
   display_update();
-}
+} */
 
 
 void display_string(int line, char *s) {
