@@ -113,6 +113,8 @@ void goal(int scorer){
     p1 = 12;
     p2 = 12;
     clearPixels();
+    display_hex(32, 1, score[0]);
+    display_hex(95, 1, score[1]);
     updatePonging(); //?
 }
 
