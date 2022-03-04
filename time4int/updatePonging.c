@@ -116,13 +116,15 @@ void goal(int scorer){
     int i;
     int j;
     int g;
-/*     for (g = 0; g<score[1]; g++){
-    for (i = 0; i<14; i+2){
+    for (g = 0; g<score[1]; g++){
+    for (i = 0; i<14; i++){
+        i=i+1;
         display_hex(32+i, 1, 63);
         }
     }
     for (g = 0; g<score[0]; g++){
-    for (i = 0; i<14; i+2){
+    for (i = 0; i<14; i++){
+        i=i+1;
         display_hex(95+i, 1, 63);
         }
     } */
