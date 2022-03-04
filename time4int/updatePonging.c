@@ -119,13 +119,12 @@ void goal(int scorer){
         display_hex(32+i, 1, 63);
         i=i+2;
         }
-    }
-    i=0;
+        i=0;
     for (g = 0; g<score[0]; g++){
         display_hex(95+i, 1, 63);
         i=i+2;
         }
-    } */
+    
     updatePonging();
 }
 
