@@ -79,6 +79,11 @@ void ball_moving(void){
     int ball_y = ballposition_y;
     int spd_x = ball_speed_x;
     int spd_y = ball_speed_y;
+    delete_pixel(ball_x ,ball_y);
+    delete_pixel(ball_x + 1,ball_y);
+    delete_pixel(ball_x,ball_y+ 1);
+    delete_pixel(ball_x - 1,ball_y);
+    delete_pixel(ball_x,ball_y - 1);
     display_pixel(ball_x + spd_x,ball_y + spd_y);
     display_pixel(ball_x + 1 + spd_x,ball_y + spd_y);
     display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
