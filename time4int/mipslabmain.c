@@ -13,7 +13,7 @@
 
 int main(void) {
 	mode = 1; //skips menu
-	score = 0;
+	score[] = {0,0};
 	level = 0;
 
 
