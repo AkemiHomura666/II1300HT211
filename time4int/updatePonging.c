@@ -113,19 +113,17 @@ void goal(int scorer){
     p1 = 12;
     p2 = 12;
     clearPixels();
-    int i;
-    int j;
+    int i=0;
     int g;
     for (g = 0; g<score[1]; g++){
-    for (i = 0; i<14; i++){
-        i=i+1;
         display_hex(32+i, 1, 63);
+        i=i+2;
         }
     }
+    i=0;
     for (g = 0; g<score[0]; g++){
-    for (i = 0; i<14; i++){
-        i=i+1;
         display_hex(95+i, 1, 63);
+        i=i+2;
         }
     } */
     updatePonging();
@@ -134,4 +132,5 @@ void goal(int scorer){
 void resetponging(void){
     score[0] = 0;
     score[1] = 0;
+    clearPixels();
 }
