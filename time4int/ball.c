@@ -5,7 +5,7 @@
 int ballposition_x = 64;
 int ballposition_y = 16;
 int ball_speed_x = 1;
-int ball_speed_y = 1;
+int ball_speed_y = 0;
 
 
 
@@ -26,6 +26,9 @@ void ball_hit_paddle1(void){
             }
         }
     }
+    else{
+        game_over();
+    }
 }
 void ball_hit_paddle2(void){
     if(ballposition_x = 126) {
@@ -36,6 +39,9 @@ void ball_hit_paddle2(void){
             }
         }
     } 
+    else{
+        game_over();
+    }
 }
 void ball_hit_side(void){ 
     if (ballposition_y = 0){
@@ -46,25 +52,34 @@ void ball_hit_side(void){
     }
 }
 
-void game_over(void){
+int game_over(void){
     if (ballposition_x = 0){
-        goal(0);
+        return 1;
     }
     if (ballposition_x = 127){
-        goal(1);
+        return 1;
+    }
+    else{
+        return 0;
     }
 }
 
 void ball_moving(void){
+    delete_pixel(ballposition_x ,ballposition_y);
+    delete_pixel(ballposition_x + 1,ballposition_y);
+    delete_pixel(ballposition_x ,ballposition_y+ 1);
+    delete_pixel(ballposition_x - 1,ballposition_y);
+    delete_pixel(ballposition_x ,ballposition_y - 1);   
     display_pixel(ballposition_x + ball_speed_x,ballposition_y + ball_speed_y);
     display_pixel(ballposition_x + 1 + ball_speed_x,ballposition_y + ball_speed_y);
     display_pixel(ballposition_x + ball_speed_x,ballposition_y+ 1 + ball_speed_y);
     display_pixel(ballposition_x - 1 + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y - 1 + ball_speed_y);    
-    ballposition_x = ballposition_x + + ball_speed_x;
-    ballposition_y = ballposition_y + + ball_speed_y;
+    display_pixel(ballposition_x + ball_speed_x,ballposition_y - 1 + ball_speed_y);
+    ballposition_x = ballposition_x + ball_speed_x;
+    ballposition_y = ballposition_y + ball_speed_y;
     ball_hit_paddle1();
     ball_hit_paddle2();
     ball_hit_side();
+    display_update();
     game_over();
 }
