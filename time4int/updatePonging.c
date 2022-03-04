@@ -43,8 +43,8 @@ void printpaddle(int y, int p){
             for (i = 0; i< 9; i++){
             display_pixel(0,y+i);
             display_pixel(1,y+i);
-        } */
-    }
+        } 
+    }*/
         display_update();
     quicksleep(1000000/level);
     return;
