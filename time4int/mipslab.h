@@ -61,6 +61,8 @@ void ball(int, int);
 void goal(int);
 void display_hs(uint8_t[5][5]);
 void resetponging(void);
+void updateMenu(void);
+void moveMenu(int);
 
 int mode;
 int score[2];

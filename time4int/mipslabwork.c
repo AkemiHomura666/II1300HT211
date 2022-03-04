@@ -82,11 +82,14 @@ void whataboutbuttons(void){
   if !(getsw ==0){
     level = getsw();
   }
-  else level = 1
+  else level = 1;
   //check button 4
     while ((getbtns() & 8) == 8){
       if (mode == 0){
        // moveLetter(0);
+       //moves menu selection upwards
+       moveMenu(0);
+       return;
       }
       else if (mode == 1){
         movePaddle(0);
@@ -96,6 +99,9 @@ void whataboutbuttons(void){
    while ((getbtns() & 4) == 4){
       if (mode == 0){
        // moveLetter(1);
+       //moves menu selection upwards
+       moveMenu(1);
+       return;
       }
       else if (mode == 1){
         movePaddle(1);
@@ -105,6 +111,9 @@ void whataboutbuttons(void){
   while ((getbtns() & 2) == 2){
       if (mode == 0){
        // moveLetter(1);
+      //enters menu selection
+       moveMenu(2);
+       return;
       }
       else if (mode == 1){
         movePaddle(2);
@@ -122,6 +131,30 @@ void whataboutbuttons(void){
   } 
 }
 
+void updateMenu(){
+  whataboutbuttons();
+  return;
+}
+void moveMenu(int selection){
+  if (selection == 0)
+  {
+    //select PLAY
+    mode = 1;
+    return;
+  }
+  else if (selection == 1)
+  {
+    //select highscore
+    mode = 2;
+    return;
+    
+  }
+  else if (selection == 2)
+  {
+    resetponging();
+    return;
+  }
+}
 
 
 //old what about buttons:

@@ -68,11 +68,10 @@ int main(void) {
         //clearPixels();
 		//display_update();
         if(mode == 0) {
-            //updateMenu();
+            updateMenu();
         } 
 		else if(mode == 1) { //egentligen 1
             updatePonging();
-			
         } 
 		else if(mode == 2) {
 			resetponging();
