@@ -2,84 +2,90 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
-int ballposition_x = 64;
-int ballposition_y = 16;
-int ball_speed_x = 1;
-int ball_speed_y = 0;
-
+float ballposition_x = 64;
+float ballposition_y = 16;
+float ball_speed_x = 1;
+float ball_speed_y = 1;
 
 
 void horizontal_direction_change(void){
     ball_speed_x = -1 * ball_speed_x;
+    if (ballposition_y >= (p1 + 4)){
+        ball_speed_y = ball_speed_y + (ballposition_y - (p1 + 4));
+    }
+    else if (ballposition_y < (p1 + 4)){
+        ball_speed_y = ball_speed_y - ((p1 + 4) - ballposition_y);
+    }
+    else if (ballposition_y >= (p2 + 4)){
+        ball_speed_y = ball_speed_y + (ballposition_y - (p2 + 4));
+    }    
+    else if (ballposition_y < (p2 + 4)){
+        ball_speed_y = ball_speed_y - ((p2 + 4) -  ballposition_y);
+    }
 }
 
 void verticle_direction_change(void){
     ball_speed_y = -1 * ball_speed_y;
 }
 
+
+void game_over(void){
+    if (ballposition_x <= 0){
+        goal(0);
+    }
+    if (ballposition_x >= 127){
+        goal(1);
+    }
+    return;
+}
+
 void ball_hit_paddle1(void){
-    if(ballposition_x = 1) {
-        int i;
-        for(i = p1; i< p1 + 9; i++){
-            if(ballposition_y = i){
+    if(ballposition_x <= 1 && ballposition_x >0) {
+            if(ballposition_y > p1 && ballposition_y <(p1 + 8)){
                horizontal_direction_change();
             }
         }
+        return;
     }
-    else{
-        game_over();
-    }
-}
+    
 void ball_hit_paddle2(void){
-    if(ballposition_x = 126) {
-        int i;
-        for(i = p2; i< p2 + 9; i++){
-            if(ballposition_y = i){
+    if(ballposition_x >= 126 && ballposition_x <127) {
+        if(ballposition_y > p1 && ballposition_y <(p1 + 8)){
                horizontal_direction_change();
             }
         }
+           return;
     } 
-    else{
-        game_over();
-    }
-}
+ 
 void ball_hit_side(void){ 
-    if (ballposition_y = 0){
+    if (ballposition_y <= 0){
         verticle_direction_change();
     }
-    if (ballposition_y = 31){
+    if (ballposition_y >= 31){
         verticle_direction_change();
     }
+    return;
 }
 
-int game_over(void){
-    if (ballposition_x = 0){
-        return 1;
-    }
-    if (ballposition_x = 127){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-}
-
-void ball_moving(void){
-    delete_pixel(ballposition_x ,ballposition_y);
-    delete_pixel(ballposition_x + 1,ballposition_y);
-    delete_pixel(ballposition_x ,ballposition_y+ 1);
-    delete_pixel(ballposition_x - 1,ballposition_y);
-    delete_pixel(ballposition_x ,ballposition_y - 1);   
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + 1 + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y+ 1 + ball_speed_y);
-    display_pixel(ballposition_x - 1 + ball_speed_x,ballposition_y + ball_speed_y);
-    display_pixel(ballposition_x + ball_speed_x,ballposition_y - 1 + ball_speed_y);
-    ballposition_x = ballposition_x + ball_speed_x;
-    ballposition_y = ballposition_y + ball_speed_y;
+void check_hit(void){
     ball_hit_paddle1();
     ball_hit_paddle2();
     ball_hit_side();
-    display_update();
-    game_over();
 }
+
+
+void ball_moving(void){
+    int ball_x = ballposition_x;
+    int ball_y = ballposition_y;
+    int spd_x = ball_speed_x;
+    int spd_y = ball_speed_y;
+    display_pixel(ball_x + spd_x,ball_y + spd_y);
+    display_pixel(ball_x + 1 + spd_x,ball_y + spd_y);
+    display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
+    display_pixel(ball_x - 1 + spd_x,ball_y + spd_y);
+    display_pixel(ball_x + spd_x,ball_y - 1 + spd_y);
+    display_update();
+    quicksleep(1000000/level);
+    ballposition_x = ballposition_x + ball_speed_x;
+    ballposition_y = ballposition_y + ball_speed_y;
+    }
