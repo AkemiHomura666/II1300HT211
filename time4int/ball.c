@@ -44,7 +44,7 @@ void ball_hit_paddle1(void){
     }
     
 void ball_hit_paddle2(void){
-    if(ballposition_x >= 126 && ballposition_x <127) {
+    if(ballposition_x >126 && ballposition_x <=127) {
         if(ballposition_y > p2 && ballposition_y <(p2 + 8)){
                horizontal_direction_change();
             }
