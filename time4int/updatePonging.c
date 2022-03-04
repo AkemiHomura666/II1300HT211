@@ -75,7 +75,6 @@ void whataboutintersect(void){
     // kod för direction change på top / bottom
     game_over();
     //kod för goaaal
-    goal(0);
     return;
 }
 
@@ -89,9 +88,14 @@ void whataboutball(void){
 
 void goal(int scorer){
     score[scorer]++;
+    resetponging();
 }
 
 void resetponging(void){
     score[0] = 0;
     score[1] = 0;
+    ballposition_x = 64;
+    ballposition_y = 16;
+    ball_speed_x = 1;
+    ball_speed_y = 1;
 }
