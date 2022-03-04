@@ -2,10 +2,10 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
-int ballposition_x = 64;
-int ballposition_y = 16;
-int ball_speed_x = 1;
-int ball_speed_y = 1;
+ballposition_x = 64;
+ballposition_y = 16;
+ball_speed_x = 1;
+ball_speed_y = 1;
 
 
 
