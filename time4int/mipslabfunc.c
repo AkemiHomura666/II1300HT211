@@ -129,6 +129,18 @@ void clearPixels(void) {
 	}
   display_update();
 }
+//clears padel buffer data
+void clearSides(void) {
+	int i;
+  int j;
+	for(i=0; i<2; i++) {
+    for(j=0; j<32; j++) {
+      delete_pixel(i,j);
+      delete_pixel(i+126,j);
+      }
+	}
+  display_update();
+}
 
 //getting display up and running
 void display_init(void) {
