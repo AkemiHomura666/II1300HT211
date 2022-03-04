@@ -2,11 +2,6 @@
 #include <pic32mx.h>  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 
-float ballposition_x = 64;
-float ballposition_y = 16;
-float ball_speed_x = 1;
-float ball_speed_y = 1;
-
 
 void horizontal_direction_change(void){
     ball_speed_x = -1 * ball_speed_x;
