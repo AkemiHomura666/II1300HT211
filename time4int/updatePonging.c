@@ -120,7 +120,7 @@ void goal(int scorer){
         i=i+2;
         }
         i=0;
-    for (g = 0; g<score[0]; g++){
+    for (g = 0; g<score[0]-1; g++){
         display_hex(95+i, 1, 63);
         i=i+2;
         }
