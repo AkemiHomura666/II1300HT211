@@ -16,6 +16,7 @@ int main(void) {
 	//score[0] = 0;
 	//score[1] = 0;
 	level = 0;
+	aiON=1;
 
 
         /*
