@@ -84,6 +84,12 @@ void ball_moving(void){
     display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
     display_pixel(ball_x - 1 + spd_x,ball_y + spd_y);
     display_pixel(ball_x + spd_x,ball_y - 1 + spd_y);
+    if(ball_x < 3){
+        printpaddle(p1,1);
+    }
+    if(ball_x > 124){
+        printpaddle(p2,2);
+    }
     display_update();
     quicksleep(1000000/level);
     ballposition_x = ballposition_x + ball_speed_x;
