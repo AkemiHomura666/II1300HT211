@@ -83,6 +83,7 @@ void updatePonging(void){
                 whataboutbuttons();
                 whataboutintersect();
                 whataboutball();
+                displayscore();
             }
 }
 
@@ -112,12 +113,24 @@ void goal(int scorer){
     ball_speed_y = 1;
     p1 = 12;
     p2 = 12;
-    display_string(1, "GAME OVER!");
-    text_update();
-    quicksleep(10000000);
     clearPixels();
     display_update();
-    /*
+    if (score[0]==5 | score[1]==5){
+        display_string(1, "GAME OVER!");
+        text_update();
+        quicksleep(100000000);
+        resetponging();
+    }
+    updatePonging();
+}
+
+void resetponging(void){
+    score[0] = 0;
+    score[1] = 0;
+    clearPixels();
+}
+
+void displayscore(void){
     int i=0;
     int g;
     for (g = 0; g<score[1]; g++){
@@ -128,13 +141,5 @@ void goal(int scorer){
     for (g = 0; g<score[0]-1; g++){
         display_hex(95+i, 1, 63);
         i=i+2;
-        } */
-    
-    updatePonging();
-}
-
-void resetponging(void){
-    score[0] = 0;
-    score[1] = 0;
-    clearPixels();
+        }
 }
