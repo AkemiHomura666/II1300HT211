@@ -163,10 +163,12 @@ void moveMenu(int selection){
   }
   else if (selection == 2)
   {
-    if (aiON){
+    if (aiON==1){
+      aiON=0;
+    }
+    else if (aiON==0){
       aiON=1;
     }
-    else aiON=0;
     clear_buffer();
   }
 }
