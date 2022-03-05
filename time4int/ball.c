@@ -68,6 +68,19 @@ void check_hit(void){
     ball_hit_side();
 }
 
+void ai(void){
+    int ai_x = ballposition_x;
+    int ai_y = ballposition_y;
+    if(ai_x > 63){
+        printpaddle(p2,2);
+        if(ai_y - 4 < p2){
+            p2--;
+        }
+        if(ai_y - 4 > p2){
+            p2++;
+        }
+}
+}
 
 void ball_moving(void){
     int ball_x = ballposition_x;
@@ -84,6 +97,7 @@ void ball_moving(void){
     display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
     display_pixel(ball_x - 1 + spd_x,ball_y + spd_y);
     display_pixel(ball_x + spd_x,ball_y - 1 + spd_y);
+    ai();
     if(ball_x < 3){
         printpaddle(p1,1);
     }
@@ -95,3 +109,6 @@ void ball_moving(void){
     ballposition_x = ballposition_x + ball_speed_x;
     ballposition_y = ballposition_y + ball_speed_y;
     }
+
+
+
