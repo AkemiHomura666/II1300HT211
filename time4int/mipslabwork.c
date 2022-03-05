@@ -87,7 +87,7 @@ void whataboutbuttons(void){
     if ((getbtns() & 8) == 8){
       if (mode == 0){
        // moveLetter(0);
-       //moves menu selection upwards
+       //selects first menu item
        moveMenu(0);
        return;
       }
@@ -140,21 +140,15 @@ void updateMenu(){
   text_update();
   display_string(3, "Btn 3: 2P / AI");
   text_update();
-  quicksleep(40000000);
 }
 void moveMenu(int selection){
   if (selection == 0)
   {
-    //select PLAY
-  display_string(2, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-  display_string(3, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
-  text_update();
-  display_init();
-  quicksleep(40000000);
+  //select PLAY
+  resetponging();
   mode = 1;
   p1 = 12;
   p2 = 12;
-  resetponging();
 	printpaddle(p1,1);
 	printpaddle(p2,2);
   }
