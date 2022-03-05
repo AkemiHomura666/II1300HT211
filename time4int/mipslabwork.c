@@ -162,51 +162,6 @@ void moveMenu(int selection){
 }
 
 
-//old what about buttons:
-
-/* void whataboutbuttons(void){
-  mode = 1;
-  level = getsw();
-  //check button 4
-    if ((getbtns() & 4) == 4){
-      if (mode == 0){
-       // moveLetter(0);
-      }
-      else if (mode == 1){
-        movePaddle(0);
-      }
-  }
-  //check button 3
-   if ((getbtns() & 2) == 2){
-      if (mode == 0){
-       // moveLetter(1);
-      }
-      else if (mode == 1){
-        movePaddle(1);
-      }
-  }
-  if ((getbtns() & 1) == 1){
-      if (mode == 0){
-       // moveLetter(1);
-      }
-      else if (mode == 1){
-        movePaddle(3);
-      }
-  } 
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* void moveLetter(int input){
   
   switch (input)

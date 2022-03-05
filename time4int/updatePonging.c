@@ -112,6 +112,8 @@ void goal(int scorer){
     ball_speed_y = 1;
     p1 = 12;
     p2 = 12;
+    display_string(0, "GAME OVER!");
+    quicksleep(10000000);
     clearPixels();
     int i=0;
     int g;
