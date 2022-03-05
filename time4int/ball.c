@@ -88,6 +88,7 @@ void ai(void){
         }    
     }
 }
+}
 
 void ball_moving(void){
     int ball_x = ballposition_x;
