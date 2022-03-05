@@ -43,6 +43,7 @@ void labinit( void )
   PR2 = 0x7a12;       // Load period register
   IFSCLR(0)=0x100;
   T2CONSET = 0x8000;
+  aiON=1;
   return;
 }
 
