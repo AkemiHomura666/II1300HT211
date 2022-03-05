@@ -79,7 +79,7 @@ void movePaddle(int a){
 }
 
 void updatePonging(void){
-			while (1){
+			while (mode == 1){
                 whataboutbuttons();
                 whataboutintersect();
                 whataboutball();
