@@ -167,6 +167,7 @@ void moveMenu(int selection){
       aiON=1;
     }
     else aiON=0;
+    display_init();
   }
 }
 
