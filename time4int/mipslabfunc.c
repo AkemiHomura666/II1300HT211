@@ -288,9 +288,10 @@ void display_image(int x, const uint8_t *data) {
 #define   cpagOledMax         4    //number of display memory pages
 /* ------------------------------------------------------------ */
 
-/* void display_update(void) {
+ void text_update(void) {
 
-  int ipag;
+//image display code first
+/*   int ipag;
   int icol;
   uint8_t * pb;
   pb = dataArray;
@@ -306,10 +307,10 @@ void display_image(int x, const uint8_t *data) {
 
       OledPutBuffer(128, pb);
       pb+= 128; */
+ 
 
 
-
- 	/* int i, j, k;
+ 	int i, j, k;
 	int c;
 	for(i = 0; i < 4; i++) {
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
@@ -328,9 +329,9 @@ void display_image(int x, const uint8_t *data) {
 			
 			for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
-		} */
-	//} 
-//}
+		} 
+	} 
+}
 
 
 /* Helper function, local to this file.
