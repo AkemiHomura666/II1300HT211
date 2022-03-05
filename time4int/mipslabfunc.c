@@ -121,6 +121,14 @@ void display_update(void) {
 	}
 }
 
+void clear_buffer(void) {
+	// sends buffer data to the oled
+	int d;
+	for(d=0; d<512; d++) {
+		spi_send_recv(0);
+	}
+}
+
 //clears buffer data
 void clearPixels(void) {
 	int i;
