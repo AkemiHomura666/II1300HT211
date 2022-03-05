@@ -171,6 +171,7 @@ void moveMenu(int selection){
       aiON=1;
     }
     clear_buffer();
+    updateMenu();
   }
 }
 
