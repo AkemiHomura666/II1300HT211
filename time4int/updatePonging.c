@@ -118,7 +118,7 @@ void goal(int scorer){
     if (score[0]==5 | score[1]==5){
         display_string(1, "GAME OVER!");
         text_update();
-        quicksleep(100000000);
+        quicksleep(40000000);
         resetponging();
     }
     updatePonging();
