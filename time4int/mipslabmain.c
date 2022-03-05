@@ -12,7 +12,7 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int main(void) {
-	mode = 1; //skips menu
+	mode = 0; //skips menu
 	score[0] = 0;
 	score[1] = 0;
 	level = 0;
@@ -64,7 +64,7 @@ int main(void) {
 	//display_string(3, "Welcom!");
 	//display_update();
 	labinit(); /* Do any lab-specific initialization */
-	while(mode == 1) {
+	while(1) {
     ledupdate();
         //clearPixels();
 		//display_update();
