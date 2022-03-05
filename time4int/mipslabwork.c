@@ -133,12 +133,9 @@ void whataboutbuttons(void){
 
 void updateMenu(){
   display_string(0, "      MENU");
-  text_update();
-  display_string(1, "Btn 1: PLAY");
-  text_update();
-  display_string(2, "Btn 2: HIGHSCORE");
-  text_update();
-  display_string(3, "Btn 3: 2P / AI");
+  display_string(1, "1: PLAY");
+  display_string(2, "2: HIGHSCORE");
+  display_string(3, "3: 2P / AI");
   text_update();
 }
 void moveMenu(int selection){
