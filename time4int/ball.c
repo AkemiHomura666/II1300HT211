@@ -85,7 +85,8 @@ void ai(void){
         }
         if(12 > p2){
             p2++;
-    }    
+        }    
+    }
 }
 
 void ball_moving(void){
