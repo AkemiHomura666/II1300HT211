@@ -71,14 +71,15 @@ void check_hit(void){
 void robot(void){
     int ai_x = ballposition_x;
     int ai_y = ballposition_y;
-    if(ai_x >= 64){
+/*     if(ai_x >= 64){ */
         printpaddle(p2,2);
         if((ai_y - 4 < p2)&& (p2 >= 0)){
             p2--;
         }
         if((ai_y - 4 > p2)&&(p2 <= 23)){
             p2++;
-        } 
+        }
+/*     } 
     if(ai_x <= 63){
         if(12 <= p2){
             p2--;
@@ -86,9 +87,9 @@ void robot(void){
         if(12 > p2){
             p2++;
         }    
-    }
+    } */
 }
-}
+
 
 void ball_moving(void){
     int ball_x = ballposition_x;
