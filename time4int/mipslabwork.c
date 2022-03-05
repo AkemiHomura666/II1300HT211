@@ -149,7 +149,8 @@ void moveMenu(int selection){
   display_string(2, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
   display_string(3, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
   text_update();
-  quicksleep(10000000);
+  display_init();
+  quicksleep(40000000);
   mode = 1;
   p1 = 12;
   p2 = 12;
