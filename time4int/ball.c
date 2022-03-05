@@ -68,7 +68,7 @@ void check_hit(void){
     ball_hit_side();
 }
 
-void ai(void){
+void robot(void){
     int ai_x = ballposition_x;
     int ai_y = ballposition_y;
     if(ai_x >= 64){
@@ -105,7 +105,7 @@ void ball_moving(void){
     display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
     display_pixel(ball_x - 1 + spd_x,ball_y + spd_y);
     display_pixel(ball_x + spd_x,ball_y - 1 + spd_y);
-    ai();
+    robot();
     if(ball_x < 3){
         printpaddle(p1,1);
     }
