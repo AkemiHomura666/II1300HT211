@@ -128,6 +128,7 @@ void resetponging(void){
     score[0] = 0;
     score[1] = 0;
     display_init();
+    quicksleep(20000000);
 }
 
 void displayscore(void){
