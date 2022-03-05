@@ -78,3 +78,4 @@ float ballposition_x;
 float ballposition_y;
 float ball_speed_x;
 float ball_speed_y;
+bool aiON;

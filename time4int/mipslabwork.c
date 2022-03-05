@@ -158,8 +158,10 @@ void moveMenu(int selection){
   }
   else if (selection == 2)
   {
-    resetponging();
-    return;
+    if (aiON){
+      aiON==false;
+    }
+    else aiON==true;
   }
 }
 
