@@ -113,6 +113,7 @@ void goal(int scorer){
     p1 = 12;
     p2 = 12;
     display_string(0, "GAME OVER!");
+    display_update();
     quicksleep(10000000);
     clearPixels();
     int i=0;
