@@ -65,7 +65,7 @@ void updateMenu(void);
 void moveMenu(int);
 void check_hit(void);
 void game_over(void);
-void displayscore(void)
+void displayscore(void);
 
 int mode;
 int score[2];
