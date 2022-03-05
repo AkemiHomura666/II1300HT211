@@ -73,10 +73,10 @@ void ai(void){
     int ai_y = ballposition_y;
     if(ai_x >= 64){
         printpaddle(p2,2);
-        if(ai_y - 4 < p2){
+        if((ai_y - 4 < p2)&& (p2 >= 0)){
             p2--;
         }
-        if(ai_y - 4 > p2){
+        if((ai_y - 4 > p2)&&(p2 <= 23)){
             p2++;
         } 
     if(ai_x <= 63){
