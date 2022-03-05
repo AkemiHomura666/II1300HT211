@@ -79,7 +79,7 @@ void robot(void){
         if((ai_y - 4 > p2)&&(p2 <= 23)){
             p2++;
         } 
-    if(ai_x <= 63){
+        else{
         if(12 < p2){
             p2--;
         }
