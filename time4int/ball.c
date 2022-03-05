@@ -106,7 +106,7 @@ void ball_moving(void){
     display_pixel(ball_x + spd_x,ball_y+ 1 + spd_y);
     display_pixel(ball_x - 1 + spd_x,ball_y + spd_y);
     display_pixel(ball_x + spd_x,ball_y - 1 + spd_y);
-    if (aiON){
+    if (aiON==1){
         robot();
     }
     if(ball_x < 3){
