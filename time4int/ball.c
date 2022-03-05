@@ -36,7 +36,7 @@ void game_over(void){
 
 void ball_hit_paddle1(void){
     if(ballposition_x <= 1 && ballposition_x >0) {
-            if(ballposition_y > p1 && ballposition_y <(p1 + 8)){
+            if(ballposition_y > (p1 - 1) && ballposition_y <(p1 + 9)){
                horizontal_direction_change();
             }
         }
@@ -45,7 +45,7 @@ void ball_hit_paddle1(void){
     
 void ball_hit_paddle2(void){
     if(ballposition_x >= 126 && ballposition_x <127) {
-        if(ballposition_y > p2 && ballposition_y <(p2 + 8)){
+        if(ballposition_y >(p2 - 1)  && ballposition_y <(p2 + 9)){
                horizontal_direction_change();
             }
         }
