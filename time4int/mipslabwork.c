@@ -164,9 +164,9 @@ void moveMenu(int selection){
   else if (selection == 2)
   {
     if (aiON){
-      aiON==false;
+      aiON=1;
     }
-    else aiON==true;
+    else aiON=0;
   }
 }
 
