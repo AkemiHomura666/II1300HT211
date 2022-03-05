@@ -164,14 +164,16 @@ void moveMenu(int selection){
   }
   else if (selection == 2)
   {
+    clear_buffer();
     if (aiON==1){
       aiON=0;
+      display_string(3, "3 MODE: 2PLAYER");
+      
     }
     else if (aiON==0){
       aiON=1;
+      display_string(3, "3 MODE: AI");
     }
-    clear_buffer();
-    updateMenu();
   }
 }
 
