@@ -70,6 +70,7 @@ int main(void) {
 		//display_update();
         if(mode == 0) {
             updateMenu();
+			whataboutbuttons();
         } 
 		else if(mode == 1) { //egentligen 1
             updatePonging();

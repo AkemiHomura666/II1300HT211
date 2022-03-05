@@ -138,11 +138,9 @@ void updateMenu(){
   text_update();
   display_string(2, "Btn 2: HIGHSCORE");
   text_update();
-  display_string(2, "Btn 3: 2P / AI");
+  display_string(3, "Btn 3: 2P / AI");
   text_update();
   quicksleep(40000000);
-  whataboutbuttons();
-  return;
 }
 void moveMenu(int selection){
   if (selection == 0)
@@ -158,7 +156,6 @@ void moveMenu(int selection){
   resetponging();
 	printpaddle(p1,1);
 	printpaddle(p2,2);
-    return;
   }
   else if (selection == 1)
   {
