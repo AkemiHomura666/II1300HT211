@@ -71,15 +71,21 @@ void check_hit(void){
 void ai(void){
     int ai_x = ballposition_x;
     int ai_y = ballposition_y;
-    if(ai_x > 63){
+    if(ai_x >= 64){
         printpaddle(p2,2);
         if(ai_y - 4 < p2){
             p2--;
         }
         if(ai_y - 4 > p2){
             p2++;
+        } 
+    if(ai_x <= 63){
+        if(12 < p2){
+            p2--;
         }
-}
+        if(12 > p2){
+            p2++;
+    }    
 }
 
 void ball_moving(void){
