@@ -44,11 +44,6 @@ void labinit( void )
   IFSCLR(0)=0x100;
   T2CONSET = 0x8000;
   return;
-  p1 = 12;
-  p2 = 12;
-  resetponging();
-	printpaddle(p1,1);
-	printpaddle(p2,2);
 }
 
 //delay + swag
@@ -137,6 +132,15 @@ void whataboutbuttons(void){
 }
 
 void updateMenu(){
+  display_string(0, "      MENU");
+  text_update();
+  display_string(1, "Btn 1: PLAY");
+  text_update();
+  display_string(2, "Btn 2: HIGHSCORE");
+  text_update();
+  display_string(2, "Btn 3: 2P / AI");
+  text_update();
+  quicksleep(40000000);
   whataboutbuttons();
   return;
 }
@@ -144,7 +148,16 @@ void moveMenu(int selection){
   if (selection == 0)
   {
     //select PLAY
-    mode = 1;
+  display_string(2, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+  display_string(3, "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨");
+  text_update();
+  quicksleep(10000000);
+  mode = 1;
+  p1 = 12;
+  p2 = 12;
+  resetponging();
+	printpaddle(p1,1);
+	printpaddle(p2,2);
     return;
   }
   else if (selection == 1)
