@@ -116,6 +116,8 @@ void goal(int scorer){
     text_update();
     quicksleep(10000000);
     clearPixels();
+    display_update();
+    /*
     int i=0;
     int g;
     for (g = 0; g<score[1]; g++){
@@ -126,7 +128,7 @@ void goal(int scorer){
     for (g = 0; g<score[0]-1; g++){
         display_hex(95+i, 1, 63);
         i=i+2;
-        }
+        } */
     
     updatePonging();
 }
