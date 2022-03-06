@@ -163,6 +163,7 @@ void clearPixels(void) {
 	}
   display_update();
 }
+
 //clears padel buffer data
 void clearSides(void) {
 	int i;

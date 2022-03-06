@@ -81,7 +81,7 @@ int main(void) {
 		else if(mode == 1) {
             updatePonging(); //runs the game loop
         } 
-		while(mode == 2) {
+		else if(mode == 2) {
 			//kod för name selection
 			whataboutbuttons();
         } 
