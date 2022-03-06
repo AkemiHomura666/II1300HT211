@@ -79,7 +79,8 @@ int main(void) {
             updatePonging();
         } 
 		else if(mode == 2) {
-			resetponging();
+			//kod för name selection
+			
         } 
 		else if(mode == 3) {
             //updateLeaderboard();
