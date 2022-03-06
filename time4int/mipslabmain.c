@@ -12,14 +12,12 @@
 #include "mipslab.h"  /* Declatations for these labs */
 
 int main(void) {
-	mode = 0; //skips menu
-	//score[0] = 0;
-	//score[1] = 0;
-	level = 0;
-	aiON=1;
+	mode = 0; // starts game at menu
+	level = 0; //basic game difficulty
+	aiON=1; // Game mode is VS AI as standard
 
 
-        /*
+        /*  Lab code:
 	  This will set the peripheral bus clock to the same frequency
 	  as the sysclock. That means 80 MHz, when the microcontroller
 	  is running at 80 MHz. Changed 2017, as recommended by Axel.
@@ -62,19 +60,20 @@ int main(void) {
 	SPI2CONSET = 0x8000;
 	
 	display_init();
-	//display_string(3, "Welcom!");
-	//display_update();
-	labinit(); /* Do any lab-specific initialization */
+	display_update();
+	labinit(); /* Do any program specific initialization */
+	// Main loop
 	while(1) {
     ledupdate();
         //clearPixels();
 		//display_update();
+
         if(mode == 0) {
-            updateMenu();
-			whataboutbuttons();
+            updateMenu(); //updates menu graphics
+			whataboutbuttons(); //checks if buttons are pressed
         } 
 		else if(mode == 1) {
-            updatePonging();
+            updatePonging(); //runs the game loop
         } 
 		else if(mode == 2) {
 			//kod för name selection
@@ -82,8 +81,6 @@ int main(void) {
         } 
 		else if(mode == 3) {
             //kod för high score
-			
-
         }
 }
 	return 0;
