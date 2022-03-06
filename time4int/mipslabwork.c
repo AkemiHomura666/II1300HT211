@@ -14,6 +14,7 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
+#include "fontheader.h"
 
 int counttimer = 0;
 int mytime = 0x0;
@@ -196,9 +197,11 @@ void moveMenu(int selection){
 void highscore(void){
   int u;
   int i;
-  for (u=0; u < 3; u++){
+  int tindex = 5;
+  int xaxel = 1;
+  for (u=0; u < 6; u++){
     for (i=0; i < 8; i++){
-                display_hex(firstletter + i, 1 ,dank_font[c + change_c][i]);
+                display_hex(tindex + i + u, xaxel,dank_font[c + change_c][i]);
                 display_update();
             }
       }
