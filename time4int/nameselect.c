@@ -15,7 +15,7 @@ void nameselect(int selection){
         if(x == 25){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                delete_hex(x + i, 1);
                 display_hex(x + i, 1 ,dank_font[a + change_a][i]);
                 display_update();
             }
@@ -24,7 +24,7 @@ void nameselect(int selection){
         if(x == 35){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                delete_hex(x + i, 1 );
                 display_hex(x + i, 1 ,dank_font[b + change_b][i]);
                 display_update();
             }
@@ -33,7 +33,7 @@ void nameselect(int selection){
         if(x == 45){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                delete_hex(x + i, 1 );
                 display_hex(x + i, 1 ,dank_font[c + change_c][i]);
                 display_update();
             }
@@ -45,7 +45,7 @@ void nameselect(int selection){
         if(x == 25){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                delete_hex(x + i, 1);
                 display_hex(x + i, 1 ,dank_font[a + change_a][i]);
                 display_update();
             }
@@ -54,7 +54,7 @@ void nameselect(int selection){
         if(x == 35){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                delete_hex(x + i, 1 );
                 display_hex(x + i, 1 ,dank_font[b + change_b][i]);
                 display_update();
             }
@@ -63,7 +63,7 @@ void nameselect(int selection){
         if(x == 45){
             int i;
             for (i=0; i < 8;i++){
-                delete_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                delete_hex(x + i, 1 );
                 display_hex(x + i, 1 ,dank_font[c + change_c][i]);
                 display_update();
             }

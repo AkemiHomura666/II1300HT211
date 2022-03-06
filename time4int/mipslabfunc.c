@@ -84,6 +84,16 @@ void display_hex(int x, int linje, int invalue) {
 	}
 }
 
+void delete_hex(int x, int linje) {
+//avoiding overflow
+ 	if(x<128 && x>=0 && linje >= 0 && linje < 4) {
+    // position in the array
+		int posinarray = 128 * linje + x;
+		//We'll again do a OR with pixel w current value in the array
+		dataArray[posinarray] = dataArray[posinarray] | 0x0;
+	}
+}
+
 /* void display_hs(uint8_t tablearray[][])
 {
   int i,j;
