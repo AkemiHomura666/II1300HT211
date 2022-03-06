@@ -84,6 +84,8 @@ int main(void) {
         } 
 		else if(mode == 3) {
             //kod för high score
+			
+
         }
 }
 	return 0;
