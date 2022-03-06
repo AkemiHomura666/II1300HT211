@@ -119,7 +119,7 @@ void display_string(int line, char *s) {
 		if(*s) {
 			textbuffer[line][i] = *s;
 			s++;
-		} else
+		} //else
 			//textbuffer[line][i] = ' ';
 }
 
