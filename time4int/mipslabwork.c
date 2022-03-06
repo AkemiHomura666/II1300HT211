@@ -157,6 +157,7 @@ void moveMenu(int selection){
   {
     if (aiON==0){
       playerselected=1;
+      mode = 2;
     }
     if (playerselected == 1){
     //select PLAY
