@@ -70,7 +70,7 @@ void nameselect(int selection){
         }
     }
     if (selection == 2){
-        highscorer[3][5][8];
+        //highscorer[3][5][8];
         firstletter = firstletter + 8;
     }
 }
