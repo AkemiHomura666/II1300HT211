@@ -13,7 +13,7 @@ void display_init(void);
 void display_string(int line, char *s);
 void display_update(void);
 void spi_send_recv(uint8_t data);
-
+void reset_string(void);
 /* Declare lab-related functions from mipslabfunc.c */
 char * itoaconv( int num );
 void labwork(void);
