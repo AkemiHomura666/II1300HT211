@@ -120,7 +120,7 @@ void display_string(int line, char *s) {
 			textbuffer[line][i] = *s;
 			s++;
 		} else
-			textbuffer[line][i] = ' ';
+			textbuffer[line][i] = '';
 }
 
 //IN PROGRESS
