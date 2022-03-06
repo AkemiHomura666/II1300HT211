@@ -17,9 +17,6 @@
 
 int counttimer = 0;
 int mytime = 0x0;
-int p1 = 12;
-int p2 = 12;
-int firstletter = 25;
 
 //Lab code
 char textstring[] = "text, more text, and even more text!";
@@ -158,13 +155,21 @@ void updateMenu(void){
 void moveMenu(int selection){
   if (selection == 0)
   {
-  //select PLAY
-  resetponging();
-  mode = 1;
-  p1 = 12;
-  p2 = 12;
-	printpaddle(p1,1);
-	printpaddle(p2,2);
+    if (aiON==0){
+      playerselected=1;
+    }
+    if (playerselected == 1){
+    //select PLAY
+    resetponging();
+    mode = 1;
+    p1 = 12;
+    p2 = 12;
+	  printpaddle(p1,1);
+	  printpaddle(p2,2);
+    }
+    else {
+      mode = 2;
+    }
   }
   else if (selection == 1)
   {

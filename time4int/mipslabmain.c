@@ -15,6 +15,10 @@ int main(void) {
 	mode = 0; // starts game at menu
 	level = 0; //basic game difficulty
 	aiON=1; // Game mode is VS AI as standard
+	playerselected=0;
+	firstletter = 25;
+	p1 = 12;
+	p2 = 12;
 
 
         /*  Lab code:

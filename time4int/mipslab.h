@@ -85,3 +85,4 @@ float ball_speed_x;
 float ball_speed_y;
 int aiON;
 int firstletter;
+int playerselected;
