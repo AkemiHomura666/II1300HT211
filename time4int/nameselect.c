@@ -3,14 +3,74 @@
 #include "mipslab.h"  /* Declatations for these labs */
 #include "fontheader.h"
 
+int x = 25;
 void nameselect(int selection){
+    int a = 33;
+    int b = 33;
+    int c = 33;
+    int change_a = 0;
+    int change_b = 0;
+    int change_c =0;
     if (selection == 0){
-
+        if(x == 25){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                display_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                display_update();
+            }
+        change_a ++;
+        }
+        if(x == 35){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                display_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                display_update();
+            }
+        change_b ++;
+        }
+        if(x == 45){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                display_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                display_update();
+            }
+        change_c ++;
+        }
+        
     }
     if (selection == 1){
-
-    }
+        if(x == 25){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                display_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                display_update();
+            }
+        change_a --;
+        }
+        if(x == 35){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                display_hex(x + i, 1 ,dank_font[b + change_b][i]);
+                display_update();
+            }
+        change_b --;
+        }
+        if(x == 45){
+            int i;
+            for (i=0; i < 8;i++){
+                delete_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                display_hex(x + i, 1 ,dank_font[c + change_c][i]);
+                display_update();
+            }
+        change_c --;
+        }
+        }
     if (selection == 2){
-
+        x = x + 10;
     }
 }
