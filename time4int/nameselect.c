@@ -2,8 +2,6 @@
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
 #include "fontheader.h"
-
-int x = 25;
 void nameselect(int selection){
     int a = 33;
     int b = 33;
@@ -71,6 +69,7 @@ void nameselect(int selection){
         }
     }
     if (selection == 2){
+        highscorer[3][5][8];
         x = x + 8;
     }
 }

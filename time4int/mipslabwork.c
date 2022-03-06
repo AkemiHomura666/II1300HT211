@@ -19,6 +19,7 @@ int counttimer = 0;
 int mytime = 0x0;
 int p1 = 12;
 int p2 = 12;
+int firstletter = 25;
 
 //Lab code
 char textstring[] = "text, more text, and even more text!";
