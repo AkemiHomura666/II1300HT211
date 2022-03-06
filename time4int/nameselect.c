@@ -69,7 +69,7 @@ void nameselect(int selection){
             }
         change_c --;
         }
-        }
+    }
     if (selection == 2){
         x = x + 10;
     }
