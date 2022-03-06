@@ -363,7 +363,7 @@ void display_image(int x, const uint8_t *data) {
 			if(c & 0x80)
 				continue;
 
-			if !(overflower=0){
+			if (!overflower=0){
         for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
         overflower = overflower-1;
