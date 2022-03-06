@@ -199,13 +199,13 @@ void highscore(void){
   int i;
   int tindex = 5;
   int xaxel = 1;
-  if 
+/*   if 
   for (u=0; u < 6; u++){
     for (i=0; i < 8; i++){
                 display_hex(tindex + i + u, xaxel,dank_font[highscorer[3][u][i]][i]);
                 display_update();
             }
-      }
+      } */
   
 }
 
