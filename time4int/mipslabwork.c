@@ -140,10 +140,10 @@ void whataboutbuttons(void){
 // Generates menu graphics
 void updateMenu(void){
   display_string(0, "      MENU");
-  display_string(1, "  1 PLAY");
+  display_string(1, "1 PLAY");
   display_string(2, " 2 HIGHSCORE");
   if (aiON==1){
-    display_string(3, "3 MODE: AI");
+    display_string(3, " 3 MODE: AI");
   }
   else if (aiON==0){
   display_string(3, "3 MODE: 2P");
