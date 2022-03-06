@@ -67,6 +67,7 @@ void check_hit(void);
 void game_over(void);
 void displayscore(void);
 void clear_buffer(void);
+void nameselect(int);
 
 int mode;
 int score[2];
