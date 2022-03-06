@@ -14,7 +14,7 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
-#include "fontheader.h"
+//#include "fontheader.h"
 
 int counttimer = 0;
 int mytime = 0x0;
