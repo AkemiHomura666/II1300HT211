@@ -92,7 +92,6 @@ void whataboutbuttons(void){
       }
       else if (mode == 2){
         nameselect(0);
-        display_update();
       }
   }
   //check button 3
@@ -109,7 +108,6 @@ void whataboutbuttons(void){
       }
       else if (mode == 2){
         nameselect(1);
-        display_update();
       }
 
   }
@@ -127,7 +125,6 @@ void whataboutbuttons(void){
       }
       else if (mode == 2){
         nameselect(2);
-        display_update();
       }
   } 
   //check button 1

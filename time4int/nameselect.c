@@ -6,9 +6,6 @@ void nameselect(int selection){
     int a = 33;
     int b = 33;
     int c = 33;
-    int change_a = 0;
-    int change_b = 0;
-    int change_c =0;
     display_init();
     if (selection == 0){
         if(firstletter == 25){
