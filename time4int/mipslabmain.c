@@ -86,7 +86,7 @@ int main(void) {
 			whataboutbuttons();
         } 
 		else if(mode == 3) {
-			highscore();
+			//highscore();
 			quicksleep(20000000);
 			mode = 0;
         }
