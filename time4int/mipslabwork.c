@@ -167,13 +167,14 @@ void moveMenu(int selection){
   else if (selection == 1)
   {
     //select highscore
-    mode = 2;
+    mode = 3;
     return;
     
   }
   else if (selection == 2)
   {
-    clear_buffer();
+    //select game mode change
+    //clear_buffer();
     if (aiON==1){
       aiON=0;
       display_string(3, "3 MODE: 2PLAYER");
