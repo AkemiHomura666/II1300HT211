@@ -69,7 +69,6 @@ int main(void) {
 		//display_update();
 
         if(mode == 0) {
-            updateMenu(); //updates menu graphics
 			whataboutbuttons(); //checks if buttons are pressed
         } 
 		else if(mode == 1) {
