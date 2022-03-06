@@ -10,7 +10,7 @@ void nameselect(int selection){
     if (selection == 1){
 
     }
-    if (selection == 0){
+    if (selection == 2){
 
     }
 }
