@@ -180,12 +180,12 @@ void moveMenu(int selection){
     //clear_buffer();
     if (aiON==1){
       aiON=0;
-      display_string(3, "3 MODE: 2PLAYER");
+      quicksleep(10000000);
       
     }
     else if (aiON==0){
       aiON=1;
-      display_string(3, "3 MODE: AI");
+      quicksleep(10000000);
     }
   }
 }
