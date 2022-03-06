@@ -75,14 +75,17 @@ int main(void) {
 				whataboutbuttons();
 			}
         } 
-		else if(mode == 1) { //egentligen 1
+		else if(mode == 1) {
             updatePonging();
         } 
 		else if(mode == 2) {
-			resetponging();
+			//kod för name selection
+			whataboutbuttons();
         } 
 		else if(mode == 3) {
-            //updateLeaderboard();
+            //kod för high score
+			
+
         }
 }
 	return 0;

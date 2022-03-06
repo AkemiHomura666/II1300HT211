@@ -94,6 +94,9 @@ void whataboutbuttons(void){
       else if (mode == 1){
         movePaddle(0);
       }
+      else if (mode == 2){
+        nameselect(0);
+      }
   }
   //check button 3
    if ((getbtns() & 4) == 4){
@@ -106,6 +109,10 @@ void whataboutbuttons(void){
       else if (mode == 1){
         movePaddle(1);
       }
+      else if (mode == 2){
+        nameselect(1);
+      }
+
   }
   //check button 2
   if ((getbtns() & 2) == 2){
@@ -117,6 +124,9 @@ void whataboutbuttons(void){
       }
       else if (mode == 1){
         movePaddle(2);
+      }
+      else if (mode == 2){
+        nameselect(2);
       }
   } 
   //check button 1
@@ -157,13 +167,14 @@ void moveMenu(int selection){
   else if (selection == 1)
   {
     //select highscore
-    mode = 2;
+    mode = 3;
     return;
     
   }
   else if (selection == 2)
   {
-    clear_buffer();
+    //select game mode change
+    //clear_buffer();
     if (aiON==1){
       aiON=0;
       display_string(3, "3 MODE: 2PLAYER");

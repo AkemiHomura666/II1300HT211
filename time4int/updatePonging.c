@@ -115,7 +115,7 @@ void goal(int scorer){
     p2 = 12;
     clearPixels();
     display_update();
-    if (score[0]==5 | score[1]==5){
+    if (score[0]==5 || score[1]==5){
         display_string(1, "GAME OVER!");
         text_update();
         quicksleep(40000000);
