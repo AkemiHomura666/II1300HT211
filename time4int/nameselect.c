@@ -9,8 +9,7 @@ void nameselect(int selection){
     int change_a = 0;
     int change_b = 0;
     int change_c =0;
-    clearPixels();
-    display_update();
+    display_init();
     if (selection == 0){
         if(firstletter == 25){
             int i;
