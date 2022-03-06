@@ -102,7 +102,7 @@ void whataboutbuttons(void){
        // moveLetter(1);
        //moves menu selection upwards
        moveMenu(1);
-       quicksleep(10000000);
+       quicksleep(5000000);
        return;
       }
       else if (mode == 1){
@@ -119,7 +119,7 @@ void whataboutbuttons(void){
        // moveLetter(1);
       //enters menu selection
        moveMenu(2);
-       quicksleep(10000000);
+       quicksleep(5000000);
        return;
       }
       else if (mode == 1){
@@ -149,10 +149,7 @@ void updateMenu(void){
     display_string(3, "3 MODE: AI");
   }
   else if (aiON==0){
-  display_string(3, "3 MODE: 2PLAYER");
-  }
-  else {
-    display_string(3, "ERROR aiON==?");
+  display_string(3, "3 MODE: 2P");
   }
   text_update();
 }
@@ -178,7 +175,6 @@ void moveMenu(int selection){
   else if (selection == 2)
   {
     //select game mode change
-    clearPixels();
     if (aiON==1){
       aiON=0;
       updateMenu();

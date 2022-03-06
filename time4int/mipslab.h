@@ -76,6 +76,7 @@ int score[2];
 int level;
 int menuselection;
 uint8_t highscorename[5][5];
+int highscorer1[5][8];
 int p1;
 int p2;
 float ballposition_x;
