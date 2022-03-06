@@ -21,7 +21,7 @@ int main(void) {
 	p2 = 12;
 	change_a = 0;
     change_b = 0;
-    change_c =0;
+    change_c = 0;
 
 
         /*  Lab code:

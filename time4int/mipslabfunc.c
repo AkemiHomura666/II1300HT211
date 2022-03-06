@@ -80,7 +80,7 @@ void display_hex(int x, int linje, int invalue) {
     // position in the array
 		int posinarray = 128 * linje + x;
 		//We'll again do a OR with pixel w current value in the array
-		dataArray[posinarray] = dataArray[posinarray] | invalue;
+		dataArray[posinarray] = dataArray[posinarray] || invalue;
 	}
 }
 
@@ -90,7 +90,7 @@ void delete_hex(int x, int linje) {
     // position in the array
 		int posinarray = 128 * linje + x;
 		//We'll again do a OR with pixel w current value in the array
-		dataArray[posinarray] = dataArray[posinarray] | 0x0;
+		dataArray[posinarray] = dataArray[posinarray] || 0x0;
 	}
 }
 

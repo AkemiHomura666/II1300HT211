@@ -141,8 +141,8 @@ void whataboutbuttons(void){
 // Generates menu graphics
 void updateMenu(void){
   display_string(0, "      MENU");
-  display_string(1, "1 PLAY");
-  display_string(2, "2 HIGHSCORE");
+  display_string(1, "  1 PLAY");
+  display_string(2, " 2 HIGHSCORE");
   if (aiON==1){
     display_string(3, "3 MODE: AI");
   }
@@ -158,6 +158,7 @@ void moveMenu(int selection){
     if (aiON==0){
       playerselected=1;
       mode = 2;
+      display_init();
     }
     if (playerselected == 1){
     //select PLAY
