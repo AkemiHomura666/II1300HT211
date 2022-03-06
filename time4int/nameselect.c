@@ -14,7 +14,7 @@ void nameselect(int selection){
             int i;
             for (i=0; i < 8;i++){
                 delete_hex(firstletter + i, 1);
-                display_hex(x + i, 1 ,dank_font[a + change_a][i]);
+                display_hex(firstletter + i, 1 ,dank_font[a + change_a][i]);
                 display_update();
             }
         change_a ++;
