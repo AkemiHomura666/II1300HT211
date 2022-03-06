@@ -102,6 +102,7 @@ void whataboutbuttons(void){
        // moveLetter(1);
        //moves menu selection upwards
        moveMenu(1);
+       quicksleep(10000000);
        return;
       }
       else if (mode == 1){
@@ -118,6 +119,7 @@ void whataboutbuttons(void){
        // moveLetter(1);
       //enters menu selection
        moveMenu(2);
+       quicksleep(10000000);
        return;
       }
       else if (mode == 1){
@@ -176,15 +178,15 @@ void moveMenu(int selection){
   else if (selection == 2)
   {
     //select game mode change
-    //clear_buffer();
+    clearPixels();
     if (aiON==1){
       aiON=0;
-      quicksleep(10000000);
+      updateMenu();
       
     }
     else if (aiON==0){
       aiON=1;
-      quicksleep(10000000);
+      updateMenu();
     }
   }
 }
