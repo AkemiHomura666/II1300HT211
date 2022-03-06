@@ -114,7 +114,7 @@ void display_string(int line, char *s) {
 }
 
 //IN PROGRESS
-void reset_string(void) {
+/* void reset_string(void) {
 	int i;
 	if(line < 0 || line >= 4)
 		return;
@@ -127,7 +127,7 @@ void reset_string(void) {
 			s++;
 		} else
 			textbuffer[line][i] = ' ';
-}
+} */
 
 void display_update(void) {
 	// sends buffer data to the oled
