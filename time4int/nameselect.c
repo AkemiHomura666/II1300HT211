@@ -21,7 +21,7 @@ void nameselect(int selection){
             }
         change_a ++;
         }
-        if(x == 35){
+        if(x == 33){
             int i;
             for (i=0; i < 8;i++){
                 delete_hex(x + i, 1 );
@@ -30,7 +30,7 @@ void nameselect(int selection){
             }
         change_b ++;
         }
-        if(x == 45){
+        if(x == 41){
             int i;
             for (i=0; i < 8;i++){
                 delete_hex(x + i, 1 );
@@ -51,7 +51,7 @@ void nameselect(int selection){
             }
         change_a --;
         }
-        if(x == 35){
+        if(x == 33){
             int i;
             for (i=0; i < 8;i++){
                 delete_hex(x + i, 1 );
@@ -60,7 +60,7 @@ void nameselect(int selection){
             }
         change_b --;
         }
-        if(x == 45){
+        if(x == 41){
             int i;
             for (i=0; i < 8;i++){
                 delete_hex(x + i, 1 );
@@ -71,6 +71,6 @@ void nameselect(int selection){
         }
     }
     if (selection == 2){
-        x = x + 10;
+        x = x + 8;
     }
 }
