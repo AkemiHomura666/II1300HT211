@@ -115,10 +115,11 @@ void goal(int scorer){
     p2 = 12;
     clearPixels();
     display_update();
-    if (score[0]==5 || score[1]==5){
+    if (aiON==1 && (score[0]==5 || score[1]==5)){
         display_string(1, "GAME OVER!");
         text_update();
-        quicksleep(40000000);
+        display_init();
+        quicksleep(10000000);
         resetponging();
     }
     updatePonging();
