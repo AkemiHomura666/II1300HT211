@@ -20,6 +20,7 @@ int mytime = 0x0;
 int p1 = 12;
 int p2 = 12;
 
+//Lab code
 char textstring[] = "text, more text, and even more text!";
 
 /* Interrupt Service Routine */
@@ -73,14 +74,11 @@ void labwork( void )
 //display_update();
 //display_image(96, icon);
 }
-
-//checks if buttons are pressed and acts accordingly
+//Checks if buttons are pressed and acts accordingly
 void whataboutbuttons(void){
   //level set by switches
   if (!getsw ==0){
     level = getsw();
-    //ball_speed_x = 1 * (level/2);
-    //ball_speed_y = 1 * (level/2);
   }
   else level = 1;
   //check button 4
@@ -140,7 +138,7 @@ void whataboutbuttons(void){
       }
   } 
 }
-
+// Generates menu graphics
 void updateMenu(void){
   display_string(0, "      MENU");
   display_string(1, "1 PLAY");
@@ -156,6 +154,7 @@ void updateMenu(void){
   }
   text_update();
 }
+// Menu functions
 void moveMenu(int selection){
   if (selection == 0)
   {
