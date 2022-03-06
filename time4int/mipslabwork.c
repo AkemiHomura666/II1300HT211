@@ -194,7 +194,7 @@ void moveMenu(int selection){
   }
 }
 
-void highscore(void){
+/* void highscore(void){
   int u;
   int i;
   int tindex = 5;
@@ -206,7 +206,7 @@ void highscore(void){
             }
       }
   
-}
+} */
 
 
 /* void moveLetter(int input){
