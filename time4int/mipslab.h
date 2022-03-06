@@ -70,6 +70,7 @@ void clear_buffer(void);
 void nameselect(int);
 void display_hex(int x, int linje, int invalue);
 void delete_hex(int x, int linje);
+void highscore(void);
 
 int mode;
 int score[2];

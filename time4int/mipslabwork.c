@@ -97,8 +97,7 @@ void whataboutbuttons(void){
   //check button 3
    if ((getbtns() & 4) == 4){
       if (mode == 0){
-       // moveLetter(1);
-       //moves menu selection upwards
+       // display hs from menu
        moveMenu(1);
        quicksleep(5000000);
        return;
@@ -158,7 +157,6 @@ void moveMenu(int selection){
     if (aiON==0){
       playerselected=1;
       mode = 2;
-      display_init();
     }
     if (playerselected == 1){
     //select PLAY
@@ -193,6 +191,18 @@ void moveMenu(int selection){
       updateMenu();
     }
   }
+}
+
+void highscore(void){
+  int u;
+  int i;
+  for (u=0; u < 3; u++){
+    for (i=0; i < 8; i++){
+                display_hex(firstletter + i, 1 ,dank_font[c + change_c][i]);
+                display_update();
+            }
+      }
+  
 }
 
 

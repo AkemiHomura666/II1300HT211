@@ -81,12 +81,14 @@ int main(void) {
 		else if(mode == 1) {
             updatePonging(); //runs the game loop
         } 
-		else if(mode == 2) {
+		while(mode == 2) {
 			//kod för name selection
 			whataboutbuttons();
         } 
 		else if(mode == 3) {
-            //kod för high score
+			highscore();
+			quicksleep(20000000);
+			mode = 0;
         }
 }
 	return 0;
