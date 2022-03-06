@@ -14,7 +14,7 @@
 #include <stdint.h>   /* Declarations of uint_32 and the like */
 #include "pic32mx.h"  /* Declarations of system-specific addresses etc */
 #include "mipslab.h"  /* Declatations for these labs */
-//#include "fontheader.h"
+#include "fontheader.h"
 
 int counttimer = 0;
 int mytime = 0x0;
@@ -142,9 +142,9 @@ void whataboutbuttons(void){
 void updateMenu(void){
   display_string(0, "      MENU");
   display_string(1, "1 PLAY");
-  display_string(2, " 2 HIGHSCORE");
+  display_string(2, "2 HIGHSCORE");
   if (aiON==1){
-    display_string(3, " 3 MODE: AI");
+    display_string(3, "3 MODE: AI");
   }
   else if (aiON==0){
   display_string(3, "3 MODE: 2P");
@@ -194,19 +194,20 @@ void moveMenu(int selection){
   }
 }
 
-/* void highscore(void){
+void highscore(void){
   int u;
   int i;
   int tindex = 5;
   int xaxel = 1;
+  if 
   for (u=0; u < 6; u++){
     for (i=0; i < 8; i++){
-                display_hex(tindex + i + u, xaxel,dank_font[c + change_c][i]);
+                display_hex(tindex + i + u, xaxel,dank_font[highscorer[3][u][i]][i]);
                 display_update();
             }
       }
   
-} */
+}
 
 
 /* void moveLetter(int input){

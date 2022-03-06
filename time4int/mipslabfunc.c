@@ -347,6 +347,7 @@ void display_image(int x, const uint8_t *data) {
 
  	int i, j, k;
 	int c;
+  int overflower = 127;
 	for(i = 0; i < 4; i++) {
 		DISPLAY_CHANGE_TO_COMMAND_MODE;
 		spi_send_recv(0x22);
@@ -361,9 +362,13 @@ void display_image(int x, const uint8_t *data) {
 			c = textbuffer[i][j];
 			if(c & 0x80)
 				continue;
-			
-			for(k = 0; k < 8; k++)
+
+			if !(overflower=0){
+        for(k = 0; k < 8; k++)
 				spi_send_recv(font[c*8 + k]);
+        overflower = overflower-1;
+      }
+			
 		} 
 	} 
 }
