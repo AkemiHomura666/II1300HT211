@@ -229,7 +229,13 @@ for (i = 0; i < 5; i++){
 namebuffer[i][1]= ' ';
 }
 
+//printing time
+hs_update();
+text_update(); //behövs?
+display_init();
 }
+
+
 
 
 /* void moveLetter(int input){
