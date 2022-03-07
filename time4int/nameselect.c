@@ -37,10 +37,10 @@ void nameselect(int selection){
                 j++;
                 if(j == 3){
                     namechecker[i] = 1;
-                    quicksleep(100000);
                 playerselected = 1;
                 mode = 1;
                 }
+                quicksleep(100000);
                 
             }    
 
