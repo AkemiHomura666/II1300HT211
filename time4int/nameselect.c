@@ -17,7 +17,7 @@ void nameselect(int selection){
                 text_update();
                 display_init();
                 change_a ++;
-                quicksleep(100000);
+                quicksleep(60000);
             }
             if (selection == 1){
                 text_update();
@@ -26,7 +26,7 @@ void nameselect(int selection){
                 text_update();
                 display_init();
                 change_a --;
-                quicksleep(100000);
+                quicksleep(60000);
             }
             if (selection == 2){
                 namebuffer[i][2 + j] = name[change_a];
@@ -35,7 +35,8 @@ void nameselect(int selection){
                     namechecker[i] = 1;
                 }
                 j++;
-                quicksleep(100000);
+                quicksleep(60000);
+                mode = 1;
             }    
 
 
