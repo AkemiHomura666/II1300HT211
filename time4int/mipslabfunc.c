@@ -367,6 +367,35 @@ void display_image(int x, const uint8_t *data) {
 	} 
 }
 
+void hs_update(void) {
+  int i, j, k;
+	int c;
+  int overflower = 127;
+	for(i = 0; i < 4; i++) {
+		DISPLAY_CHANGE_TO_COMMAND_MODE;
+		spi_send_recv(0x22);
+		spi_send_recv(i);
+		
+		spi_send_recv(0x0);
+		spi_send_recv(0x10);
+		
+		DISPLAY_CHANGE_TO_DATA_MODE;
+		
+		for(j = 0; j < 6; j++) {
+			c = namebuffer[i][j];
+			if(c & 0x80)
+				continue;
+
+			if (!(overflower=0)){
+        for(k = 0; k < 8; k++)
+				spi_send_recv(font[c*8 + k]);
+        overflower = overflower-1;
+      }
+			
+		} 
+	} 
+}
+
 
 /* Helper function, local to this file.
    Converts a number to hexadecimal ASCII digits. */
