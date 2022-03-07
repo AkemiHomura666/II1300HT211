@@ -12,7 +12,7 @@ void nameselect(int selection){
             if (selection == 0){
                 text_update();
                 display_init();
-                display_string(i, name[change_a]);
+                display_string(i, &name[change_a]);
                 text_update();
                 display_init();
                 change_a ++;
@@ -20,7 +20,7 @@ void nameselect(int selection){
             if (selection == 1){
                 text_update();
                 display_init();
-                display_string(i, name[change_a]);
+                display_string(i, &name[change_a]);
                 text_update();
                 display_init();
                 change_a --;
@@ -33,6 +33,8 @@ void nameselect(int selection){
 
 
     }
+    }
+}
 
 
   /*   int a = 33;
@@ -101,4 +103,3 @@ void nameselect(int selection){
         //highscorer[3][5][8];
         firstletter = firstletter + 8;
     } */
-}
