@@ -122,6 +122,17 @@ void display_string(int line, char *s) {
 		} //else
 			//textbuffer[line][i] = ' ';
 }
+void display_char(int line, char *s) {
+	int i;
+	if(line < 0 || line >= 4)
+		return;
+	if(!s)
+		return;
+		if(*s) {
+			textbuffer[line][i] = *s;
+			s++;
+		}
+}
 
 void reset_string(void) {
 	int i;

@@ -12,7 +12,7 @@ void nameselect(int selection){
             if (selection == 0){
                 text_update();
                 display_init();
-                display_string(2, &name[change_a]);
+                display_char(2, &name[change_a]);
                 text_update();
                 display_init();
                 change_a ++;
@@ -21,7 +21,7 @@ void nameselect(int selection){
             if (selection == 1){
                 text_update();
                 display_init();
-                display_string(2, &name[change_a]);
+                display_char(2, &name[change_a]);
                 text_update();
                 display_init();
                 change_a --;
