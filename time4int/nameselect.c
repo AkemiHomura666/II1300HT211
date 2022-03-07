@@ -3,13 +3,39 @@
 #include "mipslab.h"  /* Declatations for these labs */
 #include "fontheader.h"
 void nameselect(int selection){
-   /*  char name[26]={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
-    {
-       
-    }
- */
+    char name[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+    int i;
+    int j;
+    for (i = 0; i < 4; i++){
+       if (namechecker[i] == 0){ 
+            playerselected = i;
+            if (selection == 0){
+                text_update();
+                display_init();
+                display_string(i, name[change_a]);
+                text_update();
+                display_init();
+                change_a ++;
+            }
+            if (selection == 1){
+                text_update();
+                display_init();
+                display_string(i, name[change_a]);
+                text_update();
+                display_init();
+                change_a --;
+            }
+            if (selection == 2){
+                namebuffer[i][2 + j] = name[change_a];
+                change_a = 0;
+                namechecker[i] = 1;
+            }    
 
-    int a = 33;
+
+    }
+
+
+  /*   int a = 33;
     int b = 33;
     int c = 33;
     if (selection == 0){
@@ -74,5 +100,5 @@ void nameselect(int selection){
     if (selection == 2){
         //highscorer[3][5][8];
         firstletter = firstletter + 8;
-    }
+    } */
 }
