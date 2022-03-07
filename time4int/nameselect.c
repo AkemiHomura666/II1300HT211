@@ -4,7 +4,7 @@
 #include "fontheader.h"
 void nameselect(int selection){
     //char name[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-    char name[26]= "ABCDEFGHIJKLMNOPQRSTUVXYZ";
+    char name[26] = "ABCDEFGHIJKLMNOPQRSTUVXYZ";
     int i;
     int j;
     reset_string();
@@ -12,7 +12,7 @@ void nameselect(int selection){
     display_string(0, "CHOOSE NAME");
     for (i = 0; i < 4; i++){
        if (namechecker[i] == 0){ 
-            playerselected = i;
+            nameselected = i;
             if (selection == 0){
                 display_init();
                 display_char(2, &name[change_a]);
@@ -39,6 +39,7 @@ void nameselect(int selection){
                 }
                 j++;
                 quicksleep(100000);
+                playerselected = 1;
                 mode = 1;
             }    
 
