@@ -90,4 +90,4 @@ int playerselected;
 int change_a;
 int change_b;
 int change_c;
-char namebuffer[4][5];
+char namebuffer[5][5];
