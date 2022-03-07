@@ -34,13 +34,14 @@ void nameselect(int selection){
             if (selection == 2){
                 namebuffer[i][2 + j] = name[change_a];
                 change_a = 0;
+                j++;
                 if(j == 3){
                     namechecker[i] = 1;
-                }
-                j++;
-                quicksleep(100000);
+                    quicksleep(100000);
                 playerselected = 1;
                 mode = 1;
+                }
+                
             }    
 
 
