@@ -91,3 +91,4 @@ int change_a;
 int change_b;
 int change_c;
 char namebuffer[5][5];
+int namechecker[4];
