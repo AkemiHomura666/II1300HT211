@@ -116,6 +116,9 @@ void goal(int scorer){
     clearPixels();
     display_update();
     if (aiON==0 && (score[0]==5 || score[1]==5)){
+        reset_string();
+        text_update();
+        display_init();
         display_string(1, "GAME OVER!");
         if (score[1]==5){
             display_string(2, "Player 1 wins!");
@@ -125,7 +128,7 @@ void goal(int scorer){
         }        
         text_update();
         display_init();
-        quicksleep(20000000);
+        quicksleep(10000000);
         resetponging();
         reset_string();
     }
@@ -136,7 +139,7 @@ void resetponging(void){
     score[0] = 0;
     score[1] = 0;
     display_init();
-    quicksleep(20000000);
+    quicksleep(5000000);
 }
 
 void displayscore(void){
