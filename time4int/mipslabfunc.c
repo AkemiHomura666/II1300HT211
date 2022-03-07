@@ -352,7 +352,7 @@ void display_image(int x, const uint8_t *data) {
 		
 		DISPLAY_CHANGE_TO_DATA_MODE;
 		
-		for(j = 0; j < 16; j++) {
+		for(j = 1; j < 16; j++) {
 			c = textbuffer[i][j];
 			if(c & 0x80)
 				continue;
