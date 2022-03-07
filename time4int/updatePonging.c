@@ -85,9 +85,6 @@ void updatePonging(void){
                 whataboutball();
                 displayscore();
             }
-            if (mode == 0){
-                main();
-            }
 }
 
 
@@ -127,11 +124,10 @@ void goal(int scorer){
             display_string(2, "Player 2 wins!");
         }        
         text_update();
-        quicksleep(30000000);
+        display_init();
+        quicksleep(20000000);
         resetponging();
         reset_string();
-        display_init();
-        mode = 0;
     }
     updatePonging();
 }
