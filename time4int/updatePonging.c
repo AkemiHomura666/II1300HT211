@@ -154,4 +154,14 @@ void displayscore(void){
         display_hex(95+i, 1, 63);
         i=i+2;
         }
+        display_update();
+}
+void finishgame(void){
+    //kod för att sätta hs efter game over:
+    namebuffer[playerselected][0]=score[0];
+    display_init();
+    display_string(1, "GAME OVER!");
+    text_update();
+    quicksleep(10000000);
+    mode = 3;
 }
