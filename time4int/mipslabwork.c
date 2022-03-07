@@ -232,7 +232,9 @@ namebuffer[i][1]= ' ';
 //printing time
 hs_update();
 text_update(); //behövs?
+quicksleep(10000000);
 display_init();
+quicksleep(10000000);
 }
 
 

@@ -160,6 +160,7 @@ void finishgame(void){
     //kod för att sätta hs efter game over:
     namebuffer[playerselected][0]=score[0];
     display_init();
+    reset_string();
     display_string(1, "GAME OVER!");
     text_update();
     quicksleep(10000000);
