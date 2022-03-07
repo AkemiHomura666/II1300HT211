@@ -6,6 +6,7 @@ void nameselect(int selection){
     char name[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
     int i;
     int j;
+    display_string(1, "CHOOSE NAME");
     for (i = 0; i < 4; i++){
        if (namechecker[i] == 0){ 
             playerselected = i;
