@@ -85,7 +85,7 @@ void updatePonging(void){
                 whataboutball();
                 displayscore();
             }
-            else if (mode == 0){
+            if (mode == 0){
                 main();
             }
 }
