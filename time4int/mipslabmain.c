@@ -22,7 +22,7 @@ int main(void) {
 	change_a = 0;
     change_b = 0;
     change_c = 0;
-	namechecker = {0,0,0,0,0};
+	int namechecker[] = {0,0,0,0};
 
 
         /*  Lab code:
