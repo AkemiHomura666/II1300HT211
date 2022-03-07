@@ -127,10 +127,8 @@ void reset_string(void) {
 	int i;
   int line;
 	for (line = 0; line < 4; line++){
-	for(i = 0; i < 16; i++)
-		if(*s) {
+	for(i = 0; i < 16; i++){
 			textbuffer[line][i] = ' ';
-			s++;
 		}
   }
 }
