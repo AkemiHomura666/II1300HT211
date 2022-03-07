@@ -80,7 +80,7 @@ void whataboutbuttons(void){
     level = getsw();
   }
   else level = 1;
-  if (getsw ==0){
+  if (((getbtns() & 8) == 8) && ((getbtns() & 4) == 4) && ((getbtns() & 2) == 2) && ((getbtns() & 1) == 1)){
     finishgame();
   }
   //check button 4

@@ -7,11 +7,12 @@ void nameselect(int selection){
     int i;
     int j;
     display_string(1, "CHOOSE NAME");
+    reset_string();
     for (i = 0; i < 4; i++){
        if (namechecker[i] == 0){ 
             playerselected = i;
             if (selection == 0){
-                reset_string();
+                
                 text_update();
                 display_init();
                 display_char(2, &name[change_a]);
@@ -21,7 +22,7 @@ void nameselect(int selection){
                 quicksleep(100000);
             }
             if (selection == 1){
-                reset_string();
+                
                 text_update();
                 display_init();
                 display_char(2, &name[change_a]);
