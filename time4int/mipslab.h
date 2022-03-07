@@ -73,6 +73,7 @@ void delete_hex(int x, int linje);
 void highscore(void);
 void hsupdate(void);
 void finishgame(void);
+void resetstring(void);
 
 int mode;
 int score[2];
