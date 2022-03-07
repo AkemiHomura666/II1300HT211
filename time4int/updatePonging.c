@@ -116,7 +116,6 @@ void goal(int scorer){
     clearPixels();
     display_update();
     if (aiON==0 && (score[0]==5 || score[1]==5)){
-        display_string(0, "          ");
         display_string(1, "GAME OVER!");
         if (score[1]==5){
             display_string(2, "Player 1 wins!");
@@ -128,7 +127,7 @@ void goal(int scorer){
         display_init();
         quicksleep(30000000);
         resetponging();
-        clearPixels();
+        reset_string();
         display_init();
     }
     updatePonging();
