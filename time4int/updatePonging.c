@@ -124,13 +124,13 @@ void goal(int scorer){
             display_string(2, "Player 2 wins!");
         }        
         text_update();
-        display_init();
         quicksleep(30000000);
         resetponging();
         reset_string();
         display_init();
+        mode = 0;
     }
-    updatePonging();
+    //updatePonging();
 }
 
 void resetponging(void){
