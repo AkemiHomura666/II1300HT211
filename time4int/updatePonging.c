@@ -130,7 +130,7 @@ void goal(int scorer){
         display_init();
         mode = 0;
     }
-    //updatePonging();
+    updatePonging();
 }
 
 void resetponging(void){
