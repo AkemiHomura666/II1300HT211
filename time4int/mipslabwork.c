@@ -199,6 +199,8 @@ void highscore(void){
   int i;
   int tindex = 5;
   int xaxel = 1;
+
+  display_string(2, "    HIGHSCORE:");
 /*   if 
   for (u=0; u < 6; u++){
     for (i=0; i < 8; i++){

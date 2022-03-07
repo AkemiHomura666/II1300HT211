@@ -115,7 +115,7 @@ void goal(int scorer){
     p2 = 12;
     clearPixels();
     display_update();
-    if (aiON==1 && (score[0]==5 || score[1]==5)){
+    if (aiON==0 && (score[0]==5 || score[1]==5)){
         display_string(1, "GAME OVER!");
         if (score[0]==5){
             display_string(2, "Player 1 wins!");
