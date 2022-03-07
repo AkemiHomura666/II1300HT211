@@ -11,6 +11,7 @@ void nameselect(int selection){
        if (namechecker[i] == 0){ 
             playerselected = i;
             if (selection == 0){
+                reset_string();
                 text_update();
                 display_init();
                 display_char(2, &name[change_a]);
@@ -20,6 +21,7 @@ void nameselect(int selection){
                 quicksleep(60000);
             }
             if (selection == 1){
+                reset_string();
                 text_update();
                 display_init();
                 display_char(2, &name[change_a]);
