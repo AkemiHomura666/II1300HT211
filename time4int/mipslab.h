@@ -71,6 +71,7 @@ void nameselect(int);
 void display_hex(int x, int linje, int invalue);
 void delete_hex(int x, int linje);
 void highscore(void);
+void hsupdate(void);
 
 int mode;
 int score[2];
@@ -91,4 +92,3 @@ int change_a;
 int change_b;
 int change_c;
 char namebuffer[5][5];
-int namechecker[4];
