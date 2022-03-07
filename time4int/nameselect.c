@@ -3,7 +3,13 @@
 #include "mipslab.h"  /* Declatations for these labs */
 #include "fontheader.h"
 void nameselect(int selection){
-    int a = 33;
+    char name[26]={"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
+    {
+       
+    }
+
+
+/*     int a = 33;
     int b = 33;
     int c = 33;
     if (selection == 0){
@@ -68,5 +74,5 @@ void nameselect(int selection){
     if (selection == 2){
         //highscorer[3][5][8];
         firstletter = firstletter + 8;
-    }
+    } */
 }
