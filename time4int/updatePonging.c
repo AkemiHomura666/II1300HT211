@@ -117,6 +117,12 @@ void goal(int scorer){
     display_update();
     if (aiON==1 && (score[0]==5 || score[1]==5)){
         display_string(1, "GAME OVER!");
+        if (score[0]==5){
+            display_string(2, "Player 1 wins!");
+        }
+        else if (score[1]==5){
+            display_string(2, "Player 2 wins!");
+        }        
         text_update();
         display_init();
         quicksleep(10000000);

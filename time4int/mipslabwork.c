@@ -206,7 +206,6 @@ void highscore(void){
                 display_update();
             }
       } */
-  
 }
 
 
