@@ -72,6 +72,7 @@ void display_hex(int x, int linje, int invalue);
 void delete_hex(int x, int linje);
 void highscore(void);
 void hsupdate(void);
+void finishgame(void);
 
 int mode;
 int score[2];
