@@ -197,17 +197,35 @@ void moveMenu(int selection){
 void highscore(void){
   int u;
   int i;
-  int tindex = 5;
-  int xaxel = 1;
 
-  display_string(2, "    HIGHSCORE:");
-/*   if 
-  for (u=0; u < 6; u++){
-    for (i=0; i < 8; i++){
-                display_hex(tindex + i + u, xaxel,dank_font[highscorer[3][u][i]][i]);
-                display_update();
-            }
-      } */
+
+reset_string();
+text_update();
+display_init();
+display_string(0, "    HIGHSCORE:");
+text_update();
+display_init();
+
+//sort highscores 
+for (u=0; u < 4; u++)
+{
+    if (namebuffer[u][0] < namebuffer[u+1][0])
+    {
+        for (i = 0; i < 5; i++)
+        {
+            namebuffer[4][i] = namebuffer[u][i];
+            namebuffer[u][i] = namebuffer[u+1][i];
+            namebuffer[u+1][i] = namebuffer[4][i];
+            namebuffer[4][i] = 0;
+        }
+    }
+}
+
+//add space between score and name
+for (i = 0; i < 5; i++){
+namebuffer[i][1]= ' ';
+}
+
 }
 
 
